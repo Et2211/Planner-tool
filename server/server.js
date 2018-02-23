@@ -3,7 +3,7 @@ const app = express();
 const fs = ('require');
 const db = require('./ModelSQL.js');
 
-app.get('/api/planner', updateTitle);
+app.put('/api/planner', updateTitle);
 
 async function updateTitle(req, res) {
   const newTitle = await db.newTitle(req.query.t)
