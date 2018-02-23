@@ -16,8 +16,10 @@ async function saveTitle() {
 	//localStorage.title = document.getElementById('title').value;
 
   const response = await fetch(url);
+
   if(response.ok) {
     updateTitle(await response.json());
+
   } else {
     console.error('error getting', response.status, response.statusText);
     console.log("error");
