@@ -23,5 +23,5 @@ async function newTitle(title) {
 
 module.exports = {
   init: init,
-  showAll: showAll
+
 }
