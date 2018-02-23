@@ -1,11 +1,11 @@
 'use strict'
 
-let data = {
-  "name":"max",
-  "surname":"tune"
+let data = "testTile"
+function boot(){
+  loadTitle();
 }
 
-function boot(){
+function loadTitle() {
 
   document.getElementById('title').addEventListener('change', saveTitle);
   document.getElementById('title').value = localStorage.title || '';
@@ -20,11 +20,7 @@ function boot(){
 async function saveTitle() {
 
 	localStorage.title = document.getElementById('title').value;
-	const url = '/api/planner?t=' + localStorage.title
-
-	if(!responce.ok) {
-
-	console.error('error getting stories', response.status, response.statusText);
+	
 	}
 }
 window.addEventListener("load", boot)
