@@ -15,7 +15,7 @@ async function saveTitle() {
   let titletemp = document.getElementById('title').value;
   let url = '/api/planner?t=' +  encodeURIComponent(title);
   const response = await fetch(url, { method: 'POST' });
-
+  console.log("here")
   if(response.ok) {
     //updateTitle(await response.json());
     console.log("done")
