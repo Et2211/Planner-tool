@@ -17,6 +17,7 @@ async function newTitle(title) {
     sql.format('UPDATE headerNames SET title = ? ; ',
                {title});
   await sql.query(insertQuery);
+  console.log("done")
 }
 
 

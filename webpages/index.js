@@ -20,7 +20,7 @@ async function saveTitle() {
     updateTitle(await response.json());
   } else {
     console.error('error getting', response.status, response.statusText);
-    //document.querySelector('body > main').innerHTML = 'sorry, something went wrong...';
+    console.log("error");
   }
 }
 
@@ -28,7 +28,7 @@ function useResponse(table) {
   console.log(table);
   console.log("using resp");
   localStorage.title = document.getElementById('title').value;
-  
+
   }
 
 
