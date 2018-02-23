@@ -14,7 +14,7 @@ function loadTitle() {
 async function saveTitle() {
   let titletemp = document.getElementById('title').value;
   let url = '/api/planner';
-  url += '?t =' +  encodeURIComponent(title)
+  url += '?t=' +  encodeURIComponent(title)
 
   const response = await fetch(url);
 
