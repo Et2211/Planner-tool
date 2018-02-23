@@ -24,5 +24,6 @@ async function newTitle(title) {
 
 module.exports = {
   init: init,
+  newTitle:newTitle
 
 }
