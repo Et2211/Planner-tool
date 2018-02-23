@@ -34,6 +34,6 @@ function useResponse(table) {
 
 
   }
-}
+
 
 window.addEventListener("load", boot)
