@@ -17,7 +17,7 @@ async function saveTitle() {
   const response = await fetch(url, { method: 'POST' });
 
   if(response.ok) {
-    updateTitle(await response.json());
+    //updateTitle(await response.json());
     console.log("done")
   }
   else {
