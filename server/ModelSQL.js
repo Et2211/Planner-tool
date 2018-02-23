@@ -11,12 +11,14 @@ async function init() {
   sql = await mysql.createConnection(config.mysql);
 }
 
-async function showAll(table) {
-  const query = 'SELECT * FROM ' + table;
-  const formattedQuery = sql.format(query);
-  const rows = await sql.query(formattedQuery);
-  return rows[0];
+async function newTitle(title) {
+  const sql = await init();
+  const insertQuery =
+    sql.format('UPDATE headerNames SET title = ? ; ',
+               {title});
+  await sql.query(insertQuery);
 }
+
 
 
 module.exports = {

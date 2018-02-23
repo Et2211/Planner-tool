@@ -28,11 +28,7 @@ function useResponse(table) {
   console.log(table);
   console.log("using resp");
   localStorage.title = document.getElementById('title').value;
-
-
-
-
-
+  
   }
 
 

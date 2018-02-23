@@ -6,7 +6,8 @@ const db = require('./ModelSQL.js');
 app.post('/api/planner', updateTitle);
 
 async function updateTitle(req, res) {
-  await db.newTitle(req.query.t)
+  const newTitle = await db.newTitle(req.query.t)
+  res.json(newTitle);
 }
 
 
