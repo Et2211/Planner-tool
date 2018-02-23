@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const fs = ('require');
-const db = require('./ModelSQL.js');
+const db = require('./ModelSQL');
 
 app.post('/api/planner', updateTitle);
 
