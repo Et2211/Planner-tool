@@ -1,0 +1,54 @@
+:root {
+  --rows: 3;
+  --coloumns: 10;
+
+}
+
+
+
+
+body {
+  display: grid;
+  grid-template-columns: repeat(var(--rows), 1fr);
+  grid-template-rows:  4em repeat(var(--coloumns), 1fr);
+
+  grid-template-areas: "head head head"
+                       "master master master"
+		                   "lowest lowest lowest"
+                       "lowermaster1 lowermaster2 lowermaster3";
+  height: 50vh;
+
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#planSelector {
+
+  grid-area: head;
+}
+#title {
+  grid-area: master;
+}
+
+#topic {
+  grid-area: lowest;
+}
+
+#header1 {
+  grid-area: lowermaster1;
+
+}
+
+#header2 {
+  grid-area: lowermaster2;
+
+}
+
+#header3 {
+  grid-area: lowermaster3;
+
+}
