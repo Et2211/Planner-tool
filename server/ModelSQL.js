@@ -2,24 +2,24 @@
 
 const fs = require('fs');
 const util = require('util');
-const mysql = require('mysql2/promise');
-
-// promisify some filesystem functions
-fs.unlinkAsync = fs.unlinkAsync || util.promisify(fs.unlink);
-fs.renameAsync = fs.renameAsync || util.promisify(fs.rename);
-
 const config = require('./config');
-
-const sqlPromise = mysql.createConnection(config.mysql);
-
-(async () => {
-  const sql = await sqlPromise;
-  // handle unexpected errors by just logging them
-  sql.on('error', (err) => {
-    console.error(err);
-    sql.end();
-  });
-})();
+const mysql = require('mysql2/promise');
+let sql;
 
 
+async function init() {
+  sql = await mysql.createConnection(config.mysql);
+}
 
+async function showAll(table) {
+  const query = 'SELECT * FROM ' + table;
+  const formattedQuery = sql.format(query);
+  const rows = await sql.query(formattedQuery);
+  return rows[0];
+}
+
+
+module.exports = {
+  init: init,
+  showAll: showAll
+}
