@@ -17,7 +17,7 @@ async function saveTitle() {
 
   if(response.ok) {
     updateTitle(await response.json());
-
+    console.log("done")
   }
   else {
     console.error('error getting', response.status, response.statusText);
