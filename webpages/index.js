@@ -13,7 +13,7 @@ function loadTitle() {
 
 async function saveTitle() {
   const titletemp = document.getElementById('title').value;
-
+  console.log(encodeURIComponent(titletemp));
   const url = '/api/planner?t=' +  encodeURIComponent(titletemp);
   const response = await fetch(url, { method: 'POST' });
 
