@@ -9,13 +9,14 @@ let sql;
 
 async function init() {
   sql = await mysql.createConnection(config.mysql);
-  console.log("done")
+
 }
 
 async function newTitle(title) {
   const sql = await init();
   const insertQuery =
     sql.format('UPDATE headerNames SET title = ? where id = 1; ', {title});
+  console.log("ok")
   await sql.query(insertQuery);
   console.log("done")
 }
