@@ -16,7 +16,7 @@ async function newTitle(title) {
   const sql = await init();
   console.log("ok1")
   const insertQuery =
-    sql.format('UPDATE headerNames SET title = ? where id = 1; ', {title});
+    sql.format('INSERT INTO headerNames (title) VALUES (?)', {title});
   console.log("ok2")
   await sql.query(insertQuery);
   console.log("done")
