@@ -9,7 +9,7 @@ let sql;
 
 async function init() {
   sql = await mysql.createConnection(config.mysql);
-  console.log("ok2")
+
 }
 
 async function newTitle(title) {
@@ -17,7 +17,7 @@ async function newTitle(title) {
   console.log("ok1")
 
   const insertQuery = sql.format('INSERT INTO headerNames (title) VALUES (?);', {title});
-
+  console.log("ok2")
 
   await sql.query(insertQuery);
   console.log("done")
