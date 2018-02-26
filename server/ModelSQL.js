@@ -30,6 +30,10 @@ async function getHeaders(title) {
   return rows;
 }
 
+
+let sqlPromise = null;
+
+
 async function init() {
   if (sqlPromise) return sqlPromise;
 
