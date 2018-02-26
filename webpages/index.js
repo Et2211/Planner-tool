@@ -13,14 +13,14 @@ function loadTitle() {
 
 
 
-  function loadHeaders() {
+ async  function loadHeaders() {
     plannerName = document.getElementById("title").value
     const url = '/api/planner?id=' + encodeURIComponent(plannerName);
 
     const response = await fetch(url);
     if (response.ok) {
       console.log("ok!") // carry on from here!!!!!!
-      
+
   }
 
 
