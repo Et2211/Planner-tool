@@ -10,7 +10,10 @@ async function updateTitle(req, res) {
   res.json(newTitle);
 }
 
-
+async function getHeaders(req, res){
+	const stories = await db.getHeaders(req.query.id);
+	res.json(stories);
+	}
 
 app.listen(8080);
 

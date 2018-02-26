@@ -3,12 +3,26 @@
 let data = "testTile"
 function boot(){
   loadTitle();
+  loadHeaders();
 }
 
 function loadTitle() {
 
   document.getElementById('title').addEventListener('change', saveTitle);
   }
+
+
+
+  function loadHeaders() {
+    plannerName = document.getElementById("title").value
+    const url = '/api/planner?id=' + encodeURIComponent(plannerName);
+
+    const response = await fetch(url);
+    if (response.ok) {
+      console.log("ok!") // carry on from here!!!!!!
+      
+  }
+
 
 
 async function saveTitle() {
