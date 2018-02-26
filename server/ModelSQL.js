@@ -39,7 +39,7 @@ async function getHeaders(title) {
 
 module.exports = {
   init: init,
-  newTitle:newTitle
+  newTitle:newTitle,
   getHeaders:getHeaders
 
 
