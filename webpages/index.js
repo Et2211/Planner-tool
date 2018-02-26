@@ -42,7 +42,4 @@ async function saveTitle() {
   }
 }
 
-
-
-
-window.addEventListener("load", boot)
+window.addEventListener("load", boot);
