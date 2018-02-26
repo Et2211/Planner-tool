@@ -9,13 +9,13 @@ let sql;
 
 async function newTitle(title) {
   const sql = await init();
-  console.log("ok1")
+
 
   const insertQuery = sql.format('INSERT INTO headerNames (title) VALUES (?);', {title});
-  console.log("ok2")
+  console.log(title)
 
   await sql.query(insertQuery);
-  console.log("done")
+  //console.log("done")
 }
 
 
