@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const util = require('util');
-const config = require('./config');
+const config = require('./config.json');
 const mysql = require('mysql2/promise');
 let sql;
 
