@@ -27,7 +27,7 @@ async function getHeaders(title) {
     await sql.query('SELECT * FROM count FROM headerNames WHERE title=?', {filter});
 
   const [rows] = await sql.query(query);
-  console.log(rows + + "rows")
+  console.log(rows + "rows")
   return rows;
 }
 

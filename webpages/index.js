@@ -4,6 +4,9 @@ let data = "testTile"
 function boot(){
   loadTitle();
   loadHeaders();
+
+  //let temp = document.createElement("option")
+  //temp.
 }
 
 function loadTitle() {
