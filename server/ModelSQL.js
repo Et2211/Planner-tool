@@ -22,12 +22,12 @@ async function newTitle(title) {
 async function getHeaders(title) {
   const sql = await init();
   const filter = '%' + title + '%';
-  console.log(filter)
+  console.log(filter + "filter")
 
     await sql.query('SELECT * FROM count FROM headerNames WHERE title = ?', [filter]);
 
   const [rows] = await sql.query(query);
-  console.log(rows)
+  console.log(rows + + "rows")
   return rows;
 }
 
