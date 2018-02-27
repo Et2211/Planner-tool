@@ -21,6 +21,10 @@ function loadTitle() {
     if (response.ok) {
       console.log("ok!") // carry on from here!!!!!!
     }
+    else {
+      console.error('error getting', response.status, response.statusText);
+
+    }
   }
 
 

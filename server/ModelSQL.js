@@ -15,14 +15,14 @@ async function newTitle(title) {
   console.log(title)
 
   await sql.query(insertQuery);
-  //console.log("done")
+  console.log("title1 = " + title)
 }
 
 
 async function getHeaders(title) {
   const sql = await init();
   const filter = '%' + title + '%';
-  console.log(filter + "t = " + title)
+  console.log(filter + "t2 = " + title)
 
     await sql.query('SELECT * FROM count FROM headerNames WHERE title=?', filter);
 
