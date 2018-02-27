@@ -3,7 +3,7 @@
 let data = "testTile"
 function boot(){
   loadTitle();
-  //loadHeaders();
+  loadHeaders();
 
   //let temp = document.createElement("option")
   //temp.
