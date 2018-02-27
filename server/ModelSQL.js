@@ -22,7 +22,7 @@ async function newTitle(title) {
 async function getHeaders(title) {
   const sql = await init();
   const filter = '%' + title + '%';
-  console.log(filter + "filter")
+  console.log(filter + "t = " + title)
 
     await sql.query('SELECT * FROM count FROM headerNames WHERE title=?', filter);
 
