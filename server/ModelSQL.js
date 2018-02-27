@@ -9,11 +9,11 @@ let sql;
 
 async function newTitle(title) {
 
-  //let temp = getOldTitle(1)
-  let temp = "thuikjf"
+  let temp = getOldTitle(1)
+
   const sql = await init();
   const insertQuery = sql.format('UPDATE headerNames SET title=? WHERE title=?', [title, temp]);
-  console.log(title)
+
 
   await sql.query(insertQuery);
   console.log("title1 = " + title)
