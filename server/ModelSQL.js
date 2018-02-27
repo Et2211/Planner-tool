@@ -21,9 +21,9 @@ async function newTitle(title) {
 
 
   async function getOldTitle(id) {
-
+    let tester = '%' + id + '%'
     const sql = await init();
-    const query = sql.format('SELECT title FROM headerNames WHERE id=?', id);
+    const query = sql.format('SELECT title FROM headerNames WHERE id=?', tester);
     const [rows] = await sql.query(query);
   return rows;
   }
