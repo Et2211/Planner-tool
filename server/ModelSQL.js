@@ -9,7 +9,7 @@ let sql;
 
 async function newTitle(title) {
   const sql = await init();
-  let temp = "sada"
+  let temp = getOldTitle(1)
 
   const insertQuery = sql.format('UPDATE headerNames SET title=? WHERE title=?', [title, temp]);
   console.log(title)
@@ -19,13 +19,23 @@ async function newTitle(title) {
 }
 
 
+  async function getOldTitle(id) {
+
+    const sql = await init();
+    const query = sql.format('SELECT title FROM headerNames WHERE id=', {id});
+    const [rows] = await sql.query(query);
+  return rows;
+  }
+
+
+
 async function getHeaders(title) {
   const sql = await init();
   const filter = '%' + title + '%';
   console.log(filter + "t2 = " + title)
 
     await sql.query('SELECT * FROM count FROM headerNames WHERE title=?', {filter});
-
+    //sql format
   const [rows] = await sql.query(query);
   console.log(rows + "rows")
   return rows;
