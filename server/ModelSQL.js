@@ -9,9 +9,9 @@ let sql;
 
 async function newTitle(title) {
   const sql = await init();
+  let temp = "testing2"
 
-
-  const insertQuery = sql.format('UPDATE headerNames SET title =? WHERE title='testing2'', {title});
+  const insertQuery = sql.format('UPDATE headerNames SET title =? WHERE title=?', {title, temp});
   console.log(title)
 
   await sql.query(insertQuery);
