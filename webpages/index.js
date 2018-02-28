@@ -23,7 +23,8 @@ async function loadData() {
   if (response.ok) {
 
     let testMe = await response.json()
-    console.log(JSON.stringify(testMe)) // carry on from here!!!!!!
+    console.log(testMe);
+    console.log(JSON.stringify(testMe)); // carry on from here!!!!!!
 
   }
   else {
