@@ -40,7 +40,7 @@ async function loadData() {
 
 function fillheaders(headers) {
 
-  headers.forEach(header) {
+  headers.forEach(header) => {
     console.log(header);
   }
 
