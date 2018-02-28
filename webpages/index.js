@@ -42,11 +42,21 @@ function fillheaders(headers) {
 
      let title = (head.title);
 
-    let header1 = (head.coloumn1);
-    let header2 = (head.coloumn2);
-    let header3 = (head.coloumn3);
+    let newHeader1 = (head.coloumn1);
+    let newHeader2 = (head.coloumn2);
+    let newHeader3 = (head.coloumn3);
 
-    console.log(title + header1 + header2 + header3)
+    let header1 = document.getElementById("header1");
+    let header2 = document.getElementById("header2");
+    let header3 = document.getElementById("header3");
+
+
+    
+
+
+
+
+
   }
 
 
