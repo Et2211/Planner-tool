@@ -50,10 +50,9 @@ function fillheaders(headers) {
     let header2 = document.getElementById("header2");
     let header3 = document.getElementById("header3");
 
-
-    
-
-
+    header1.value = newHeader1
+    header2.value = newHeader2
+    header3.value = newHeader3
 
 
 
