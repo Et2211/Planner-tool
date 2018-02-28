@@ -34,8 +34,8 @@ async function getHeaders(title) {
   const sql = await init();
   const filter = '%' + title + '%';
   console.log(filter)
-    console.log(sql.query('SELECT * FROM headerNames WHERE title=?', title));
-    await sql.query('SELECT * FROM headerNames WHERE title=?', title);
+
+    await sql.query('SELECT * FROM headerNames WHERE title=?', [title]);
     //sql format
   const [rows] = await sql.query(query);
   console.log(rows + "rows")
