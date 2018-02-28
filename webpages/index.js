@@ -23,9 +23,13 @@ async function loadData() {
   if (response.ok) {
 
     let testMe = await response.json()
-    console.log(testMe);
-    let testMe2 = (JSON.parse(JSON.stringify(testMe))); // carry on from here!!!!!!
-    console.log(testMe2);
+    console.log(testMe))
+    console.log(JSON.stringify(testMe))
+     // carry on from here!!!!!!
+
+     fillheaders(testMe)
+
+
   }
   else {
     console.error('error getting', response.status, response.statusText);
@@ -34,7 +38,14 @@ async function loadData() {
 
 }
 
+function fillheaders(headers) {
 
+  headers.forEach(header) {
+    console.log(header);
+  }
+
+
+}
 
 
 
