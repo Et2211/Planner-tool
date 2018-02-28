@@ -18,6 +18,7 @@ async function loadData() {
 
   let planTitle = document.getElementById("planSelector")
   let title = (planSelector.options[ planSelector.selectedIndex ].value)
+  console.log(title)
 
 
   const url = '/api/planner?title=' + encodeURIComponent(title);
