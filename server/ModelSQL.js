@@ -38,7 +38,7 @@ async function getHeaders(title) {
 
     //sql format
   const [rows] = await sql.query(query);
-  console.log(rows + "rows")
+  console.log([rows] + "rows")
   return rows;
 }
 
