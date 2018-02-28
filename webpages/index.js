@@ -14,7 +14,19 @@ function boot(){
 async function loadData() {
 
   let planTitle = document.getElementById("planSelector")
-  console.log(planSelector.options[ planSelector.selectedIndex ].value)
+  let title = (planSelector.options[ planSelector.selectedIndex ].value)
+
+  const url = '/api/planner?id=' + title;
+
+  const response = await fetch(url);
+  if (response.ok) {
+    console.log("ok!") // carry on from here!!!!!!
+  }
+  else {
+    console.error('error getting', response.status, response.statusText);
+
+  }
+
 }
 
 

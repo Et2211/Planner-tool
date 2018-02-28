@@ -4,7 +4,7 @@ const fs = ('require');
 const db = require('./ModelSQL');
 
 
-app.get('/api/planner', getHeaders) 
+app.get('/api/planner', getHeaders)
 app.post('/api/planner', updateTitle);
 
 
@@ -14,8 +14,8 @@ async function updateTitle(req, res) {
 }
 
 async function getHeaders(req, res){
-	const stories = await db.getHeaders(req.query.id);
-	res.json(stories);
+	const header = await db.getHeaders(req.query.title);
+	res.json(header);
 	}
 
 app.listen(8080);
