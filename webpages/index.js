@@ -21,7 +21,7 @@ async function loadData() {
 
   const response = await fetch(url);
   if (response.ok) {
-    console.log(await response.json().["0"]) // carry on from here!!!!!!
+    console.log(await response.json()) // carry on from here!!!!!!
 
   }
   else {
