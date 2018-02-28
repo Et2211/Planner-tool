@@ -18,10 +18,10 @@ async function loadData() {
 
 
   const url = '/api/planner?title=' + encodeURIComponent(title);
-  console.log(url)
+
   const response = await fetch(url);
   if (response.ok) {
-    console.log(response) // carry on from here!!!!!!
+    console.log(await responce.json()) // carry on from here!!!!!!
   }
   else {
     console.error('error getting', response.status, response.statusText);
