@@ -13,7 +13,7 @@ body {
   grid-template-rows:  4em repeat(var(--coloumns), 1fr);
 
   grid-template-areas: "head head2 head3"
-                       "master master master"
+                       "master master2 master3"
                        "lowermaster1 lowermaster2 lowermaster3"
                        "lowest lowest lowest";
 
@@ -33,20 +33,20 @@ body {
 }
 
 #topic {
-  grid-area: master;
+  grid-area: head2;
 }
 
 #header1 {
-  grid-area: lowermaster1;
+  grid-area: master;
 
 }
 
 #header2 {
-  grid-area: lowermaster2;
+  grid-area: master2;
 
 }
 
 #header3 {
-  grid-area: lowermaster3;
+  grid-area: master3;
 
 }
