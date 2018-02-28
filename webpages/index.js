@@ -2,12 +2,16 @@
 
 let data = "Webf1"
 function boot(){
-  //loadTitle();
-  //loadHeaders();
+
   loadData()
-  //let temp = document.createElement("option")
-  //temp.
+  //listen()
 }
+
+
+ function listen() {
+     document.getElementById('planSelector').addEventListener('change', loadData);
+}, false);
+ }
 
 
 
