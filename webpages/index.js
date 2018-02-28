@@ -24,8 +24,8 @@ async function loadData() {
 
     let testMe = await response.json()
     console.log(testMe);
-    console.log(JSON.stringify(testMe)); // carry on from here!!!!!!
-
+    let testMe2 = (JSON.parse(JSON.stringify(testMe))); // carry on from here!!!!!!
+    console.log(testMe2);
   }
   else {
     console.error('error getting', response.status, response.statusText);
