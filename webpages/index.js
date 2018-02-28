@@ -42,7 +42,7 @@ function fillheaders(headers) {
 
    for (let head of headers) {
     console.log(head);
-    console.log(head.id)
+    console.log(head.coloumn1)
   }
 
 
