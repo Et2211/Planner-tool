@@ -13,7 +13,7 @@ async function updateTitle(req, res) {
   res.json(newTitle);
 }
 
-async function getHeaders(req, res){
+async function getHeaders(req, res) {
   console.log(req.query.title)
 	const header = await db.getHeaders(req.query.title);
 	res.json(header);
