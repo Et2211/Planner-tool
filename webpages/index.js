@@ -21,10 +21,8 @@ async function loadData() {
 
   const response = await fetch(url);
   if (response.ok) {
-
     let testMe = await response.json()
-    console.log(testMe);
-    console.log(JSON.stringify(testMe))
+
      // carry on from here!!!!!!
 
      fillheaders(testMe)
@@ -41,8 +39,14 @@ async function loadData() {
 function fillheaders(headers) {
 
    for (let head of headers) {
-    console.log(head);
-    console.log(head.coloumn1)
+
+     let title = (head.title);
+
+    let header1 = (head.coloumn1);
+    let header2 = (head.coloumn2);
+    let header3 = (head.coloumn3);
+
+    console.log(title + header1 + header2 + header3)
   }
 
 
