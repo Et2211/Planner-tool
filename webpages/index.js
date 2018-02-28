@@ -15,7 +15,7 @@ async function loadData() {
 
   let planTitle = document.getElementById("planSelector")
   let title = (planSelector.options[ planSelector.selectedIndex ].value)
-  conosle.log(title;)
+  conosle.log(title)
   const url = '/api/planner?id=' + encodeURIComponent(title);
 
   const response = await fetch(url);
