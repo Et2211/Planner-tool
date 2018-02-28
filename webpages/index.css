@@ -31,12 +31,9 @@ body {
 
   grid-area: head;
 }
-#title {
-  grid-area: master;
-}
 
 #topic {
-  grid-area: lowest;
+  grid-area: master;
 }
 
 #header1 {
