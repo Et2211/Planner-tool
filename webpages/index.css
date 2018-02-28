@@ -14,8 +14,9 @@ body {
 
   grid-template-areas: "head head head"
                        "master master master"
-		                   "lowest lowest lowest"
-                       "lowermaster1 lowermaster2 lowermaster3";
+                       "lowermaster1 lowermaster2 lowermaster3"
+                       "lowest lowest lowest";
+
   height: 50vh;
 
 
