@@ -21,8 +21,8 @@ async function loadData() {
 
   const response = await fetch(url);
   if (response.ok) {
-    console.log(await response.json()) // carry on from here!!!!!!
-  
+    console.log(await response.json().coloumn1) // carry on from here!!!!!!
+
   }
   else {
     console.error('error getting', response.status, response.statusText);
