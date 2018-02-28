@@ -22,7 +22,7 @@ async function loadData() {
   const response = await fetch(url);
   if (response.ok) {
 
-    let test = await response.json()
+    let testMe = await response.json()
     console.log(testMe) // carry on from here!!!!!!
 
   }
