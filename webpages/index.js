@@ -2,18 +2,46 @@
 
 let data = "Webf1"
 function boot(){
-  loadTitle();
+  //loadTitle();
   //loadHeaders();
 
   //let temp = document.createElement("option")
   //temp.
 }
 
+
+
+async function loadData() {
+
+  let planTitle = document.getElementById("planSelector")
+  console.log(planSelector.options[ planSelector.selectedIndex ].value)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function loadTitle() {
 
   document.getElementById('title').addEventListener('change', saveTitle);
   }
-
 
 
  async  function loadHeaders() {
