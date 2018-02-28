@@ -41,7 +41,7 @@ async function loadData() {
 function fillheaders(headers) {
 
    for (let head of headers) {
-    console.log(header);
+    console.log(head);
   }
 
 
