@@ -15,10 +15,10 @@ async function loadData() {
 
   let planTitle = document.getElementById("planSelector")
   let title = (planSelector.options[ planSelector.selectedIndex ].value)
-  console.log(title)
+
 
   const url = '/api/planner?id=' + encodeURIComponent(title);
-
+  console.log(url)
   const response = await fetch(url);
   if (response.ok) {
     console.log("ok!") // carry on from here!!!!!!
