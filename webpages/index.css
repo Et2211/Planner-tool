@@ -12,7 +12,7 @@ body {
   grid-template-columns: repeat(var(--rows), 1fr);
   grid-template-rows:  4em repeat(var(--coloumns), 1fr);
 
-  grid-template-areas: "head head head"
+  grid-template-areas: "head head2 head3"
                        "master master master"
                        "lowermaster1 lowermaster2 lowermaster3"
                        "lowest lowest lowest";
