@@ -82,6 +82,8 @@ async function releaseConnection(connection) {
 
 module.exports = {
   init: init,
+  
+  getHeaders:getHeaders,
   shutDown: shutDown,
   getTitles: getTitles
 
