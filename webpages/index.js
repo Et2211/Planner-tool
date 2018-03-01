@@ -19,6 +19,7 @@ async function loadTitles() {
     const response = await fetch(url);
     if (response.ok) {
       console.log(await response.json());
+
     }
     else {
       console.error('error getting', response.status, response.statusText);
@@ -37,8 +38,7 @@ async function loadData() {
 
   const response = await fetch(url);
   if (response.ok) {
-    let testMe = await response.json()
-     fillheaders(testMe)
+     fillheaders(await response.json())
   }
   else {
     console.error('error getting', response.status, response.statusText);
