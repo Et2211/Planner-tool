@@ -4,7 +4,6 @@ let data = "Webf1"
 function boot(){
 
   loadTitles()
-  delay(100); // simulate slow network
   loadData()
   listen()
 }
