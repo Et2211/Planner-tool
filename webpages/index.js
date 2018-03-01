@@ -18,10 +18,7 @@ async function loadTitles() {
     const url = '/api/planner/title';
     const response = await fetch(url);
     if (response.ok) {
-      let temp = await response.json();
-      console.log(temp);
-      fillTitles(temp);
-
+      fillTitles(await response.json());
     }
     else {
       console.error('error getting', response.status, response.statusText);
@@ -29,10 +26,15 @@ async function loadTitles() {
   }
 
 
-function fillTitles(titles){
+function fillTitles(titlesArray){
 
-  for (let title of titles){
+  let sel = document.getElementById("planSelector");
+
+  for (let title of titlesArray){
     console.log(title.title);
+    let opt = document.createElement("option");
+    opt.textContent = title.title;
+    sel.appendChild(opt);
   }
 }
 
