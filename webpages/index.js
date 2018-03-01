@@ -19,6 +19,7 @@ async function loadTitles() {
     const response = await fetch(url);
     if (response.ok) {
       console.log(await response.json());
+      fillTitles(await response.json());
 
     }
     else {
@@ -27,6 +28,12 @@ async function loadTitles() {
   }
 
 
+function fillTitles(titles){
+
+  for (let title of titles){
+    console.log(title);
+  }
+}
 
 
 
