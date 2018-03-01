@@ -13,32 +13,37 @@ function boot(){
  }
 
 
+async function loadTitles() {
+    const url = '/api/planner/title';
+    const response = await fetch(url);
+    if (response.ok) {
+      console.log(await response.json());
+    }
+    else {
+      console.error('error getting', response.status, response.statusText);
+    }
+  }
+}
+
+
+
 
 async function loadData() {
 
   let planTitle = document.getElementById("planSelector")
   let title = (planSelector.options[ planSelector.selectedIndex ].value)
-  console.log(title)
-
-
   const url = '/api/planner?title=' + encodeURIComponent(title);
 
   const response = await fetch(url);
   if (response.ok) {
     let testMe = await response.json()
-
-     // carry on from here!!!!!!
-
      fillheaders(testMe)
-
-
   }
   else {
     console.error('error getting', response.status, response.statusText);
-
   }
-
 }
+
 
 function fillheaders(headers) {
 

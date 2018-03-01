@@ -7,40 +7,42 @@ const mysql = require('mysql2/promise');
 let sql;
 
 
-async function newTitle(title) {
-
-  let temp = getOldTitle(1)
-
-  const sql = await init();
-  const insertQuery = sql.format('UPDATE headerNames SET title=? WHERE title=?', [title, temp]);
 
 
-  await sql.query(insertQuery);
-  console.log("title1 = " + title)
-}
-
-
-  async function getOldTitle(id) {
-    let tester = '%' + id + '%'
+  async function getTitles() {
     const sql = await init();
-    const query = sql.format('SELECT title FROM headerNames WHERE id=?', [tester]);
-    const rows = await sql.query(query);
-  return rows;
+    const query = sql.query('SELECT title FROM headerNames')
+    const [rows] = await sql.query(query);
+    return rows;
   }
+
+
+
 
 
 
 async function getHeaders(title) {
   const sql = await init();
   const filter = '%' + title + '%';
-  console.log(filter)
+
     const query = sql.format('SELECT * FROM headerNames WHERE title=?', [title])
 
     //sql format
   const [rows] = await sql.query(query);
-  console.log([rows])
+
   return rows;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 let sqlPromise = null;
@@ -83,5 +85,6 @@ module.exports = {
   newTitle:newTitle,
   getHeaders:getHeaders,
   shutDown: shutDown,
+  getTitles: getTitles
 
 }

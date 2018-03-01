@@ -5,16 +5,18 @@ const db = require('./ModelSQL');
 
 
 app.get('/api/planner', getHeaders)
-app.post('/api/planner', updateTitle);
+app.get('.api.planner/title', getTitle)
 
 
-async function updateTitle(req, res) {
-  const newTitle = await db.newTitle(req.query.t)
-  res.json(newTitle);
+
+async function getTitle(req, res){
+  const titles = await db.getTitles()
+  res.json(titles);
 }
 
+
 async function getHeaders(req, res) {
-  
+
 	const header = await db.getHeaders(req.query.title);
 	res.json(header);
 	}
