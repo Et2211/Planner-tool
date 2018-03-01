@@ -11,7 +11,7 @@ let sql;
 
   async function getTitles() {
     const sql = await init();
-    const query = sql.query('SELECT title FROM headerNames')
+    const query = 'SELECT title FROM headerNames'
     const [rows] = await sql.query(query);
     return rows;
   }
@@ -82,7 +82,7 @@ async function releaseConnection(connection) {
 
 module.exports = {
   init: init,
-  
+
   getHeaders:getHeaders,
   shutDown: shutDown,
   getTitles: getTitles

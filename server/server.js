@@ -10,7 +10,7 @@ app.get('/api/planner/title', getTitle)
 
 
 async function getTitle(req, res){
-  console.log("found");
+  
   const titles = await db.getTitles()
   res.json(titles);
 }
