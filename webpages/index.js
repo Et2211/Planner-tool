@@ -3,9 +3,10 @@
 let data = "Webf1"
 function boot(){
 
-  loadTitles()
-  loadData()
-  listen()
+  loadTitles();
+  let timeout = window.setTimeout(loadData, 500);
+  
+  listen();
 }
 
 
