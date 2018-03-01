@@ -23,7 +23,7 @@ async function loadTitles() {
       console.error('error getting', response.status, response.statusText);
     }
   }
-}
+
 
 
 
