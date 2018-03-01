@@ -7,18 +7,12 @@ const mysql = require('mysql2/promise');
 let sql;
 
 
-
-
-  async function getTitles() {
-    const sql = await init();
-    const query = 'SELECT title FROM headerNames'
-    const [rows] = await sql.query(query);
-    return rows;
-  }
-
-
-
-
+async function getTitles() {
+  const sql = await init();
+  const query = 'SELECT title FROM headerNames'
+  const [rows] = await sql.query(query);
+  return rows;
+}
 
 
 async function getHeaders(title) {
@@ -32,15 +26,6 @@ async function getHeaders(title) {
 
   return rows;
 }
-
-
-
-
-
-
-
-
-
 
 
 

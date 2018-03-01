@@ -10,17 +10,20 @@ app.get('/api/planner/title', getTitle)
 
 
 async function getTitle(req, res){
-  
+
   const titles = await db.getTitles()
   res.json(titles);
 }
-
 
 async function getHeaders(req, res) {
 
 	const header = await db.getHeaders(req.query.title);
 	res.json(header);
 	}
+
+
+
+  
 
 app.listen(8080);
 
