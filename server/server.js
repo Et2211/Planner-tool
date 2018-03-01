@@ -5,7 +5,7 @@ const db = require('./ModelSQL');
 
 
 app.get('/api/planner', getHeaders)
-app.get('api/planner/title', getTitle)
+app.get('/api/planner/title', getTitle)
 
 
 
