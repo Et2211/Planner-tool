@@ -32,7 +32,7 @@ async function loadTitles() {
 function fillTitles(titles){
 
   for (let title of titles){
-    console.log(title);
+    console.log(title.title);
   }
 }
 
