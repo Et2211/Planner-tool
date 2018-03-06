@@ -4,7 +4,7 @@ let currentPlan;
 function boot(){
 
   loadTitles();
-  //let timeout = window.setTimeout(loadData, 500); // Allows time for loadTitles() to fetch titles, else results in error
+  let timeout = window.setTimeout(loadData, 500); // Allows time for loadTitles() to fetch titles, else results in error
   //listen();
 }
 
@@ -31,7 +31,7 @@ function fillTitles(titlesArray){
   let sel = document.getElementById("planSelector");
 
   for (let title of titlesArray){
-    console.log(title.planName);
+
     let opt = document.createElement("option");
     opt.textContent = title.planName;
     sel.appendChild(opt);
@@ -45,6 +45,8 @@ async function loadData() {
 
   let planTitle = document.getElementById("planSelector")
   let title = (planSelector.options[ planSelector.selectedIndex ].value)
+  let week = (topic.options[ topic.selectedIndex ].value)
+  console.log(title + ' ' + week);
   const url = '/api/planner?title=' + encodeURIComponent(title);
 
   const response = await fetch(url);
