@@ -22,10 +22,7 @@ body {
 
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
+
 
 #planSelector {
 
@@ -35,17 +32,13 @@ body {
 #topic {
   grid-area: head2;
 }
-
 #header1 {
   grid-area: master;
 
 }
-
 #header2 {
   grid-area: master2;
-
 }
-
 #header3 {
   grid-area: master3;
 
