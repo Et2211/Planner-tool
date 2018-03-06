@@ -51,21 +51,19 @@ body {
 
 }
 
-.mainText {
-  height: 10em;
-}
+
 
 #main1  {
   grid-area: lowest1;
-
+  height: 10em;
 }
 
 #main2  {
   grid-area: lowest2;
-
+  height: 10em;
 }
 
 #main3  {
   grid-area: lowest3;
-
+  height: 10em;
 }
