@@ -4,8 +4,7 @@ let data = "Webf1"
 function boot(){
 
   loadTitles();
-  loadData();
-  //let timeout = window.setTimeout(loadData, 500); // Allows time for loadTitles() to fetch titles, else results in error
+  let timeout = window.setTimeout(loadData, 500); // Allows time for loadTitles() to fetch titles, else results in error
   listen();
 }
 
@@ -49,7 +48,7 @@ async function loadData() {
 
   const response = await fetch(url);
   if (response.ok) {
-    await fillheaders(response.json())
+     fillheaders(await response.json())
   }
   else {
     console.error('error getting', response.status, response.statusText);
@@ -57,7 +56,7 @@ async function loadData() {
 }
 
 
-async function fillheaders(headers) {
+function fillheaders(headers) {
 
    for (let head of headers) {
 
