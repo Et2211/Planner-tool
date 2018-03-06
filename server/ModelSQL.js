@@ -20,7 +20,7 @@ async function getHeaders(title, week) {
   const filter1 = '%' + title + '%';
   const filter2 = '%' + week + '%';
 
-    const query = sql.format('SELECT * FROM headerNames WHERE planName=? AND Week=?', [title, week])
+    const query = sql.format('SELECT * FROM headerNames WHERE planName=? AND eek=?', [title, week])
 
     //sql format
   const [rows] = await sql.query(query);
