@@ -45,8 +45,14 @@ body {
 #header3 {
   grid-area: master3;
   height: 3em;
+}
+.headers {
+    padding: 0;
+    margin: 0;
 
 }
+
+
 
 #main1  {
   grid-area: lowest1;
