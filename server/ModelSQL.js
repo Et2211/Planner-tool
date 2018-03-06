@@ -11,7 +11,7 @@ async function getTitles() {
   const sql = await init();
   const query = 'SELECT planName FROM planNames'
   const [rows] = await sql.query(query);
-    console.log(rows);
+  console.log(rows);
   return rows;
 }
 
