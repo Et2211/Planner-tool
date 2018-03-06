@@ -43,12 +43,12 @@ function fillTitles(titlesArray){
 
 async function loadData() {
 
-  let planTitle = document.getElementById("planSelector")
+  let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
+
   let title = planTitle.options[planTitle.selectedIndex].value;
-  //let title = (planSelector.options[ planSelector.selectedIndex ].value)
-  console.log(title);
   let week = planWeek.options[planWeek.selectedIndex].value;
+
   console.log(title + ' ' + week);
   const url = '/api/planner?title=' + encodeURIComponent(title);
 
