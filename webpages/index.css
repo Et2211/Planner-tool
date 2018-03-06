@@ -17,7 +17,7 @@ body {
                        "lowermaster1 lowermaster2 lowermaster3"
                        "lowest1 lowest2 lowest3";
 
-  height: 50vh;
+
 
 
 }
@@ -51,9 +51,13 @@ body {
 
 }
 
+.main {
+  height: 100%;
+}
+
 #main1  {
   grid-area: lowest1;
-  height: 500%;
+  
 }
 
 #main2  {
