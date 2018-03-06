@@ -5,7 +5,7 @@ function boot(){
 
   loadTitles();
   let timeout = window.setTimeout(loadData, 500); // Allows time for loadTitles() to fetch titles, else results in error
-  //listen();
+  listen();
 }
 
 
