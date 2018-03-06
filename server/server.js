@@ -17,13 +17,13 @@ async function getTitle(req, res){
 
 async function getHeaders(req, res) {
 
-	const header = await db.getHeaders(req.query.title);
+	const header = await db.getHeaders(req.query.title, req.query.week);
 	res.json(header);
 	}
 
 
 
-  
+
 
 app.listen(8080);
 
