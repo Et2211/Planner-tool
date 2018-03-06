@@ -31,16 +31,20 @@ body {
 
 #topic {
   grid-area: head2;
+  height: 3em;
 }
 #header1 {
   grid-area: master;
+  height: 3em;
 
 }
 #header2 {
   grid-area: master2;
+  height: 3em;
 }
 #header3 {
   grid-area: master3;
+  height: 3em;
 
 }
 
