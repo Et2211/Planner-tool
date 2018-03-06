@@ -61,7 +61,7 @@ body {
 #main1  {
 
   grid-area: lowest1;
-
+  height: 100%;
 }
 
 #main2  {
