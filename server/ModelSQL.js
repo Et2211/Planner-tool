@@ -9,7 +9,7 @@ let sql;
 
 async function getTitles() {
   const sql = await init();
-  const query = 'SELECT title FROM headerNames'
+  const query = 'SELECT planName FROM planNames'
   const [rows] = await sql.query(query);
   return rows;
 }
