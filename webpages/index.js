@@ -44,6 +44,7 @@ function fillTitles(titlesArray){
 async function loadData() {
 
   let planTitle = document.getElementById("planSelector")
+  let planWeek = document.getElementById("topic")
   let title = (planSelector.options[ planSelector.selectedIndex ].value)
   let week = (topic.options[ topic.selectedIndex ].value)
   console.log(title + ' ' + week);
