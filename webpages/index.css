@@ -1,6 +1,6 @@
 :root {
   --rows: 3;
-  --coloumns: 10;
+  --coloumns: 2;
 
 }
 
@@ -10,11 +10,11 @@
 body {
   display: grid;
   grid-template-columns: repeat(var(--rows), 1fr);
-  grid-template-rows:  4em repeat(var(--coloumns), 1fr);
+  grid-template-rows:  4em, 4em );
 
   grid-template-areas: "head head2 head3"
-                       "master master2 master3"
-                       "lowest1 lowest2 lowest3";
+                       "master master2 master3";
+
 
 
 
