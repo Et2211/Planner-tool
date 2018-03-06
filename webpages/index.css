@@ -55,13 +55,13 @@ body {
 .mainText{
   padding: 0;
   margin: 0;
-  height: 100%;
+  height: 100em;
 }
 
 #main1  {
 
   grid-area: lowest1;
-  height: 100%;
+
 }
 
 #main2  {
