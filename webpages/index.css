@@ -14,9 +14,8 @@ body {
 
   grid-template-areas: "head head2 head3"
                        "master master2 master3"
-                       "lowermaster1 lowermaster2 lowermaster3"
-                       "lowest1 lowest2 lowest3";
-
+                       "lowest1 lowest2 lowest3"
+                       "lowermaster1 lowermaster2 lowermaster3";
 
 
 
@@ -27,6 +26,7 @@ body {
 #planSelector {
 
   grid-area: head;
+  height: 3em;
 }
 
 #topic {
