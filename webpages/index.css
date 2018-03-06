@@ -48,11 +48,9 @@ body {
 
 }
 
-
-
 #main1  {
   grid-area: lowest1;
-  height: 10em;
+  height: 15em;
 }
 
 #main2  {
