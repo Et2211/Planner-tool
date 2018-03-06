@@ -74,6 +74,10 @@ function fillheaders(headers) {
     let newHeader2 = (head.header2);
     let newHeader3 = (head.header3);
 
+    let newMain1 = (head.main1);
+    let newMain2 = (head.main2);
+    let newMain3 = (head.main3)
+
     let header1 = document.getElementById("header1");
     let header2 = document.getElementById("header2");
     let header3 = document.getElementById("header3");
@@ -86,9 +90,9 @@ function fillheaders(headers) {
     header2.value = newHeader2;
     header3.value = newHeader3;
 
-    main1.value = main1;
-    main2.value = main2;
-    main3.value = main3;
+    main1.value = newMain1;
+    main2.value = newMain2;
+    main3.value = newMain3;
 
 
 
