@@ -11,6 +11,7 @@ function boot(){
 
  function listen() {
      document.getElementById('planSelector').addEventListener('change', loadData);
+     document.getElementById('topic').addEventListener('change', loadData);
  }
 
 
