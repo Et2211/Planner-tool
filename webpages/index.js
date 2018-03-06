@@ -70,9 +70,9 @@ function fillheaders(headers) {
 
      let title = (head.title);
 
-    let newHeader1 = (head.coloumn1);
-    let newHeader2 = (head.coloumn2);
-    let newHeader3 = (head.coloumn3);
+    let newHeader1 = (head.header1);
+    let newHeader2 = (head.header2);
+    let newHeader3 = (head.header3);
 
     let header1 = document.getElementById("header1");
     let header2 = document.getElementById("header2");
