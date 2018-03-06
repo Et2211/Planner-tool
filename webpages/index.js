@@ -54,7 +54,7 @@ async function loadData() {
 
   const response = await fetch(url);
   if (response.ok) {
-      let temp = await response.json())
+      let temp = await response.json()
       console.log(temp);
       fillheaders(temp);
   }
