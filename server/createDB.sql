@@ -40,6 +40,8 @@ INSERT INTO headerNames (planID, planName, Week, header1, header2, header3, main
 INSERT INTO headerNames (planID, planName, Week, header1, header2, header3, main1) VALUES (1, 'Webscript', 'Week 11', 'This week', 'Code', 'resources', 'Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called.');
 INSERT INTO headerNames (planID, planName, Week, header1, header2, header3, main1) VALUES (1, 'Webscript', 'Week 12', 'This week', 'Code', 'resources', 'Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called.');
 
+INSERT INTO headerNames (planID, planName, Week, header1, header2, header3, main1) VALUES (1, 'WebF1', 'Week 1', 'This week', 'Code', 'no lecture', 'He determined to drop his litigation with the monastry, and relinguish his claims to the wood-cuting and fishery rihgts at once. He was the more ready to do this becuase the rights had becom much less valuable, and he had indeed the vaguest idea where the wood and river in quedtion were.');
+
 
 
 
