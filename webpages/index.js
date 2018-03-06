@@ -1,6 +1,6 @@
 'use strict'
 
-let data = "Webf1"
+let currentPlan;
 function boot(){
 
   loadTitles();
@@ -35,6 +35,7 @@ function fillTitles(titlesArray){
     let opt = document.createElement("option");
     opt.textContent = title.planName;
     sel.appendChild(opt);
+    currentPlan = title.planName;
   }
 }
 
