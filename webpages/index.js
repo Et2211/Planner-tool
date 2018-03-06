@@ -33,7 +33,7 @@ function fillTitles(titlesArray){
   for (let title of titlesArray){
     console.log(title.planName);
     let opt = document.createElement("option");
-    opt.textContent = title.title;
+    opt.textContent = title.planName;
     sel.appendChild(opt);
   }
 }
