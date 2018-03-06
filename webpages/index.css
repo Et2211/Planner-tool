@@ -15,7 +15,7 @@ body {
   grid-template-areas: "head head2 head3"
                        "master master2 master3"
                        "lowermaster1 lowermaster2 lowermaster3"
-                       "lowest lowest lowest";
+                       "lowest1 lowest2 lowest3";
 
   height: 50vh;
 
@@ -48,5 +48,20 @@ body {
 
 #header3 {
   grid-area: master3;
+
+}
+
+#main1  {
+  grid-area: lowest1;
+
+}
+
+#main2  {
+  grid-area: lowest2;
+
+}
+
+#main3  {
+  grid-area: lowest3;
 
 }
