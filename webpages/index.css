@@ -52,12 +52,12 @@ body {
 }
 
 .main {
-  height: 100%;
+  height: 500%;
 }
 
 #main1  {
   grid-area: lowest1;
-  
+
 }
 
 #main2  {
