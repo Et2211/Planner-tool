@@ -18,7 +18,7 @@ async function loadTitles() {
     const url = '/api/planner/title';
     const response = await fetch(url);
     if (response.ok) {
-      console.log(await responce.json());
+      console.log(await response.json());
       //fillTitles(await response.json());
     }
     else {
