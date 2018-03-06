@@ -49,12 +49,14 @@ async function loadData() {
   let title = planTitle.options[planTitle.selectedIndex].value;
   let week = planWeek.options[planWeek.selectedIndex].value;
 
-  console.log(title + ' ' + week);
+
   const url = '/api/planner?title=' + encodeURIComponent(title) + '&week=' + encodeURIComponent(week);
 
   const response = await fetch(url);
   if (response.ok) {
-     fillheaders(await response.json())
+      let temp = await response.json())
+      console.log(temp);
+      fillheaders(temp);
   }
   else {
     console.error('error getting', response.status, response.statusText);

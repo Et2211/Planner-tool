@@ -24,7 +24,7 @@ async function getHeaders(title, week) {
 
     //sql format
   const [rows] = await sql.query(query);
-  console.log(rows);
+
 
   return rows;
 }
