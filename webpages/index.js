@@ -88,7 +88,7 @@ async function saveData(e) {
   url += '&week=' + encodeURIComponent(week);
 
   console.log(url);
-  const response = await fetch(url);
+  const response = await fetch(url, { method: 'PATCH' });
   if (response.ok) {
      console.log(await response.json());
 
