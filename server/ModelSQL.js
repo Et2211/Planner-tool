@@ -75,6 +75,7 @@ module.exports = {
 
   getHeaders:getHeaders,
   shutDown: shutDown,
-  getTitles: getTitles
+  getTitles: getTitles,
+  updateData: updateData
 
 }
