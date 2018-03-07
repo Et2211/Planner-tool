@@ -19,18 +19,21 @@ async function getHeaders(title, week) {
   const sql = await init();
   const filter1 = '%' + title + '%';
   const filter2 = '%' + week + '%';
-
-    const query = sql.format('SELECT * FROM headerNames WHERE planName=? AND Week=?', [title, week])
-
-    //sql format
+  const query = sql.format('SELECT * FROM headerNames WHERE planName=? AND Week=?', [title, week])
   const [rows] = await sql.query(query);
-
-
   return rows;
 }
 
 
 
+async function updateData(id, data, title, week){
+
+    const sql = await init();
+    const query = sql.format('UPDATE headerNames SET ? = ? WHERE planName=? AND Week=?', [id, data, title, week])
+    console.log(query);
+    const [rows] = await sql.query(query);
+    return rows;
+}
 
 let sqlPromise = null;
 

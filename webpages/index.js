@@ -69,8 +69,28 @@ async function loadData() {
 
 
 async function saveData(e) {
- console.log(e.target.id);
- //const url = '/api/planner/saveData'
+
+  let planTitle = document.getElementById("planSelector");
+  let planWeek = document.getElementById("topic")
+  let title = planTitle.options[planTitle.selectedIndex].value;
+  let week = planWeek.options[planWeek.selectedIndex].value;
+
+  let url = '/api/planner/saveData?id=' + encodeURIComponent(e.target.id) + '&data=' + encodeURIComponent(e.target.value);
+
+  url += '&data=' + encodeURIComponent(e.target.value);
+  url += '&title=' + encodeURIComponent(title);
+  url += '&week=' + encodeURIComponent(week);
+
+  console.log(url);
+  const response = await fetch(url, { method: 'PATCH' });
+  if (response.ok) {
+     console.log(await response.json());
+
+ }
+ else {
+   console.error('error getting', response.status, response.statusText);
+ }
+
 
 }
 
