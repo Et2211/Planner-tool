@@ -96,8 +96,6 @@ async function saveData(e) {
  else {
    console.error('error getting', response.status, response.statusText);
  }
-
-
 }
 
 
