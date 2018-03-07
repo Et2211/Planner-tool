@@ -12,12 +12,12 @@ function boot(){
  function listen() {
      document.getElementById('planSelector').addEventListener('change', loadData);
      document.getElementById('topic').addEventListener('change', loadData);
-     document.getElementById("header1").addEventListener('change', saveData)
-     document.getElementById("header2").addEventListener('change', saveData)
-     document.getElementById("header3").addEventListener('change', saveData)
-     document.getElementById("main1").addEventListener('change', saveData)
-     document.getElementById("main2").addEventListener('change', saveData)
-     document.getElementById("main3").addEventListener('change', saveData)
+     document.getElementById("header1").addEventListener('change', saveData);
+     document.getElementById("header2").addEventListener('change', saveData);
+     document.getElementById("header3").addEventListener('change', saveData);
+     document.getElementById("main1").addEventListener('change', saveData);
+     document.getElementById("main2").addEventListener('change', saveData);
+     document.getElementById("main3").addEventListener('change', saveData);
 
  }
 
@@ -75,6 +75,7 @@ async function loadData() {
 
 async function saveData(e) {
 
+  console.log('run');
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
   let title = planTitle.options[planTitle.selectedIndex].value;
