@@ -69,7 +69,7 @@ async function loadData() {
 
 
 async function saveData(e) {
- console.log(e.target);
+ console.log(e.target.id);
  //const url = '/api/planner/saveData'
 
 }
