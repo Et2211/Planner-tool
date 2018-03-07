@@ -101,15 +101,6 @@ async function saveData(e) {
 }
 
 
-
-
-
-
-
-
-
-
-
 function fillheaders(headers) {
 
    for (let head of headers) {
