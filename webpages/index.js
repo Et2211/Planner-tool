@@ -72,14 +72,6 @@ function fillheaders(headers) {
 
      let title = (head.title);
 
-    let newHeader1 = (head.header1);
-    let newHeader2 = (head.header2);
-    let newHeader3 = (head.header3);
-
-    let newMain1 = (head.main1);
-    let newMain2 = (head.main2);
-    let newMain3 = (head.main3)
-
     let header1 = document.getElementById("header1");
     let header2 = document.getElementById("header2");
     let header3 = document.getElementById("header3");
