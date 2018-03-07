@@ -12,6 +12,8 @@ function boot(){
  function listen() {
      document.getElementById('planSelector').addEventListener('change', loadData);
      document.getElementById('topic').addEventListener('change', loadData);
+
+     documnet.getElementById("header1").addEventListener('change', saveData)
  }
 
 
@@ -66,30 +68,42 @@ async function loadData() {
 }
 
 
+async function saveData(e) {
+ console.log(e.target);
+
+}
+
+
+
+
+
+
+
+
+
+
+
 function fillheaders(headers) {
 
    for (let head of headers) {
 
      let title = (head.title);
 
-    let header1 = document.getElementById("header1");
-    let header2 = document.getElementById("header2");
-    let header3 = document.getElementById("header3");
+     let header1 = document.getElementById("header1");
+     let header2 = document.getElementById("header2");
+     let header3 = document.getElementById("header3");
 
-    let main1 = document.getElementById("main1");
-    let main2 = document.getElementById("main2");
-    let main3 = document.getElementById("main3");
+     let main1 = document.getElementById("main1");
+     let main2 = document.getElementById("main2");
+     let main3 = document.getElementById("main3");
 
-    header1.value = head.header1;
-    header2.value = head.header2;
-    header3.value = head.header3;
+     header1.value = head.header1;
+     header2.value = head.header2;
+     header3.value = head.header3;
 
-    main1.value = head.main1;
-    main2.value = head.main2;
-    main3.value = head.main3;
-
-
-
+     main1.value = head.main1;
+     main2.value = head.main2;
+     main3.value = head.main3;
   }
 
 
