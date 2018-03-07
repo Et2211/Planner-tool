@@ -13,7 +13,7 @@ function boot(){
      document.getElementById('planSelector').addEventListener('change', loadData);
      document.getElementById('topic').addEventListener('change', loadData);
 
-     documnet.getElementById("header1").addEventListener('change', saveData)
+     document.getElementById("header1").addEventListener('change', saveData)
  }
 
 
