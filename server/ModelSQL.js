@@ -29,6 +29,7 @@ async function getHeaders(title, week) {
 async function updateData(id, data, title, week){
 
     const sql = await init();
+    console.log(data)
     const query = sql.format('UPDATE headerNames SET ? = ? WHERE planName=? AND Week=?', [id, data, title, week])
     console.log(query);
     const [rows] = await sql.query(query);
