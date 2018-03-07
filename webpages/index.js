@@ -36,13 +36,13 @@ async function loadTitles() {
 
 function fillTitles(titlesArray){
 
-  let sel = document.getElementById("planSelector");
+  let el = document.getElementById("planSelector");
 
   for (let title of titlesArray){
 
     let opt = document.createElement("option");
     opt.textContent = title.planName;
-    sel.appendChild(opt);
+    el.appendChild(opt);
     currentPlan = title.planName;
   }
 }
