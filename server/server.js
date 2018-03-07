@@ -6,7 +6,7 @@ const db = require('./ModelSQL');
 
 app.get('/api/planner', getHeaders)
 app.get('/api/planner/title', getTitle)
-app.patch('/api/planner/saveData', updateData)
+app.get('/api/planner/saveData', updateData)
 
 
 
