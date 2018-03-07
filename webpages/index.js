@@ -88,13 +88,13 @@ function fillheaders(headers) {
     let main2 = document.getElementById("main2");
     let main3 = document.getElementById("main3");
 
-    header1.value = newHeader1;
-    header2.value = newHeader2;
-    header3.value = newHeader3;
+    header1.value = head.header1;
+    header2.value = head.header2;
+    header3.value = head.header3;
 
-    main1.value = newMain1;
-    main2.value = newMain2;
-    main3.value = newMain3;
+    main1.value = head.main1;
+    main2.value = head.main2;
+    main3.value = head.main3;
 
 
 
