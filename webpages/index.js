@@ -18,7 +18,7 @@ function boot(){
      document.getElementById("main1").addEventListener('change', saveData);
      document.getElementById("main2").addEventListener('change', saveData);
      document.getElementById("main3").addEventListener('change', saveData);
-     document.getElementById("newPlan").addEventListener('change', newPlan);
+     document.getElementById("newPlan").addEventListener('click', newPlan);
 
 
  }
