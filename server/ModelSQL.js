@@ -33,7 +33,7 @@ async function newPlan(name){
   const rows = await sql.query(query1);
 
   for (i = 1; i < 13; i++) {
-    const sql = await init()
+  //  const sql = await init()
     let query2 = sql.format('INSERT INTO headerNames (planName, Week) VALUES (?, "Week" ' + i + ')';, [name]);
 
     console.log(query2)
