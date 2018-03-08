@@ -40,7 +40,7 @@ async function newPlan(name){
     const rows2 = await sql.query(query2)
   }
 
-
+}
 
 
 async function updateData(id, data, title, week){
