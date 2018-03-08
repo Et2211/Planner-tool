@@ -41,7 +41,7 @@ async function newPlan(name){
 
   }
 
-  return rows
+  return rows;
 }
 
 
