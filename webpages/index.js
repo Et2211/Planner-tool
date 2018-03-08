@@ -18,6 +18,8 @@ function boot(){
      document.getElementById("main1").addEventListener('change', saveData);
      document.getElementById("main2").addEventListener('change', saveData);
      document.getElementById("main3").addEventListener('change', saveData);
+     document.getElementById("newPlan").addEventListener('change', newPlan);
+
 
  }
 
@@ -97,6 +99,14 @@ async function saveData(e) {
    console.error('error getting', response.status, response.statusText);
  }
 }
+
+
+async function newPlan() {
+  let newPlanName = promt("Enter the name of your new plan");
+  console.log(person)
+}
+
+
 
 
 function fillheaders(headers) {
