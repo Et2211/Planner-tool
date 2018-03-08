@@ -102,6 +102,7 @@ async function saveData(e) {
 
 
 async function newPlan() {
+  console.log("run")
   let newPlanName = promt("Enter the name of your new plan");
   console.log(person)
 }
