@@ -25,6 +25,22 @@ async function getHeaders(title, week) {
 }
 
 
+async function newPlan(name){
+
+  const sql = await init()
+  const query1 = sql.format('INSERT INTO planNames (planName) VALUES (?)', [name]);
+    console.log(query1)
+  const rows = await sql.query(query1);
+
+  for (i = 1, i < 13, i++) {
+    const sql = await init()
+    let query2 = sql.format('INSERT INTO headerNames (planName, Week, header1, header2, header3) VALUES (?, "Week" '+ i +')';, [name]);
+    console.log(query2)
+    await sql.query(query2)
+  }
+
+}
+
 
 async function updateData(id, data, title, week){
 

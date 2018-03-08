@@ -102,9 +102,18 @@ async function saveData(e) {
 
 
 async function newPlan() {
-  console.log("run")
+
   let newPlanName = window.prompt("Enter the name of your new plan");
-  console.log(newPlanName)
+
+  const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName);
+  console.log(url);
+  const response = await fetch(url, { method: 'POST' });
+  if (response.ok) {
+     console.log(await response.json());
+  else {
+    console.error('error getting', response.status, response.statusText);
+  }
+
 }
 
 
