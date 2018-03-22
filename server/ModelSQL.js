@@ -108,6 +108,6 @@ module.exports = {
   getTitles: getTitles,
   updateData: updateData,
   newPlan: newPlan,
-  getplan: getPlan
+  getPlan: getPlan
 
 }
