@@ -96,24 +96,29 @@ function fillWeeks(weeks){
 
 async function loadData() {
 
+
+
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
 
-  let title = planTitle.options[planTitle.selectedIndex].value;
-  let week = planWeek.options[planWeek.selectedIndex].value;
+  if (container.firstChild) {
 
+    let title = planTitle.options[planTitle.selectedIndex].value;
+    let week = planWeek.options[planWeek.selectedIndex].value;
 
+    const url = '/api/planner?title=' + encodeURIComponent(title) + '&week=' + encodeURIComponent(week);
 
-  const url = '/api/planner?title=' + encodeURIComponent(title) + '&week=' + encodeURIComponent(week);
-
-  const response = await fetch(url);
-  if (response.ok) {
-      fillheaders(await response.json());
-  }
-  else {
-    console.error('error getting', response.status, response.statusText);
-  }
-}
+    const response = await fetch(url);
+    if (response.ok) {
+        fillheaders(await response.json());
+      }
+      else {
+        console.error('error getting', response.status, response.statusText);
+      }
+    }
+    else {
+      console.log("No database")
+    }
 
 
 async function saveData(e) {
