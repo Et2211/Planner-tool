@@ -149,7 +149,8 @@ async function newPlan() {
     const response = await fetch(url, { method: 'POST' });
     if (response.ok) {
       console.log(await response.json());
-      init()
+      loadTitles()
+      loadPlan()
     }
     else {
       console.error('error getting', response.status, response.statusText);
