@@ -87,7 +87,7 @@ function fillWeeks(weeks){
 
     for (let i = 1; i < (numOfWeeks + 1); i++) {
 
-      el = document.createElement("option")
+      let el = document.createElement("option")
       el.textContent = "Week " + i
       container.appendChild(el)
 
