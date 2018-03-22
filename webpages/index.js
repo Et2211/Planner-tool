@@ -138,9 +138,9 @@ async function saveData(e) {
 async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
-  let numOfWeeks = window.prompt("Enter the number of weeks for this unit (Decimals will be rounded to the nearest integer)");
+  let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
   numOfWeeks = (parseFloat(numOfWeeks) + 1);
-  numOfWeeks = Math.round(numOfWeeks);
+
 
   if (Number.isInteger(numOfWeeks)) {
 
