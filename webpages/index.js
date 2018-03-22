@@ -149,8 +149,7 @@ async function newPlan() {
     const response = await fetch(url, { method: 'POST' });
     if (response.ok) {
       console.log(await response.json());
-      loadTitles()
-      loadPlan()
+      addTitle(newPlanName)
     }
     else {
       console.error('error getting', response.status, response.statusText);
@@ -160,6 +159,14 @@ async function newPlan() {
   else {
     alert("Number of weeks must be an integer")
   }
+}
+
+function addTitle(name){
+  let planTitle = document.getElementById("planSelector");
+  let el = document.createElement("option");
+  el.textContent = name;
+  planTitle.appendChild(el);
+
 }
 
 
