@@ -10,8 +10,8 @@ function boot(){
 
 
  function listen() {
-     document.getElementById('planSelector').addEventListener('change', loadData);
-     document.getElementById('topic').addEventListener('change', loadData);
+     document.getElementById('planSelector').addEventListener('change', loadPlan);
+    // document.getElementById('topic').addEventListener('change', loadData);
      document.getElementById("header1").addEventListener('change', saveData);
      document.getElementById("header2").addEventListener('change', saveData);
      document.getElementById("header3").addEventListener('change', saveData);
@@ -66,7 +66,7 @@ async function loadPlan() {
   if (response.ok) {
       let temp = await response.json()
       console.log(temp);
-    
+
   }
   else {
     console.error('error getting', response.status, response.statusText);
