@@ -104,6 +104,9 @@ async function saveData(e) {
 async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
+  let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
+
+  if (Number.isInteger(numOfWeeks)) {
 
   const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName);
   console.log(url);
@@ -113,10 +116,13 @@ async function newPlan() {
    }
   else {
     console.error('error getting', response.status, response.statusText);
+    }
+
   }
-
+  else {
+    alert("Number of weeks must be an integer")
+  }
 }
-
 
 
 
