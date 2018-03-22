@@ -164,8 +164,11 @@ async function newPlan() {
 function addTitle(name){
   let planTitle = document.getElementById("planSelector");
   let el = document.createElement("option");
+
   el.textContent = name;
   planTitle.appendChild(el);
+
+  loadPlan()
 
 }
 
