@@ -83,7 +83,7 @@ function fillWeeks(weeks){
       }
 
     let temp2 = weeks[0]
-    numOfWeeks = temp2["count(*)"]
+    let numOfWeeks = temp2["count(*)"]
 
     for (let i = 1; i < (numOfWeeks + 1); i++) {
 
