@@ -146,10 +146,11 @@ async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
   let numOfWeeks = window.prompt("Enter the number of weeks for this unit (Decimals will be rounded to the nearest integer)");
-
+  console.log(numOfWeeks)
   numOfWeeks = parseFloat(numOfWeeks);
+  console.log(numOfWeeks)
   numOfWeeks = Math.round(numOfWeeks);
-
+  console.log(numOfWeeks)
   if (Number.isInteger(numOfWeeks)) {
 
     const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
