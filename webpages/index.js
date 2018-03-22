@@ -79,7 +79,7 @@ function fillWeeks(weeks){
     let container = document.getElementById("topic")
 
     while (container.firstChild) {
-        container.removeChild(element.firstChild);
+        container.removeChild(container.firstChild);
       }
 
     let temp2 = weeks[0]
