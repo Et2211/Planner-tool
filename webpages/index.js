@@ -190,4 +190,4 @@ function fillheaders(headers) {
 }
 
 
-window.addEventListener("load", boot);
+window.addEventListener("load", init);
