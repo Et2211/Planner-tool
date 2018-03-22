@@ -75,9 +75,23 @@ async function loadPlan() {
 }
 
 function fillWeeks(weeks){
-    console.log(weeks[0])
+
+    let container = document.getElementById("topic")
+
+    while (container.firstChild) {
+        container.removeChild(element.firstChild);
+      }
+
     let temp2 = weeks[0]
-    console.log(temp2["count(*)"])
+    numOfWeeks = temp2["count(*)"]
+
+    for (let i = 1; i < (numOfWeeks + 1); i++) {
+
+      el = document.createElement("option")
+      el.textContent = "Week " + i
+      container.appendChild(el)
+
+      }
 }
 
 
