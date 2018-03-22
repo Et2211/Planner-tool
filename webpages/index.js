@@ -54,7 +54,7 @@ async function loadPlan() {
 
   let planTitle = document.getElementById("planSelector");
   //let planWeek = document.getElementById("topic")
-
+  console.log(planTitle.hasChildNodes())
   if (planTitle.hasChildNodes()){
 
     let title = planTitle.options[planTitle.selectedIndex].value;
