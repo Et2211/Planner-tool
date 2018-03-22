@@ -105,18 +105,18 @@ async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
   let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
-
+  console.log(Number.isInteger(numOfWeeks))
   if (Number.isInteger(numOfWeeks)) {
 
-  const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName);
-  console.log(url);
-  const response = await fetch(url, { method: 'POST' });
-  if (response.ok) {
-     console.log(await response.json());
-   }
-  else {
-    console.error('error getting', response.status, response.statusText);
+    const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
+    console.log(url);
+    const response = await fetch(url, { method: 'POST' });
+    if (response.ok) {
+      console.log(await response.json());
     }
+    else {
+      console.error('error getting', response.status, response.statusText);
+      }
 
   }
   else {
