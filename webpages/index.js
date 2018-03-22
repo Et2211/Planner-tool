@@ -57,9 +57,6 @@ async function loadPlan() {
 
   let title = planTitle.options[planTitle.selectedIndex].value;
 
-
-
-
   const url = '/api/planner/new?title=' + encodeURIComponent(title)
 
   const response = await fetch(url);
@@ -101,7 +98,7 @@ async function loadData() {
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
 
-  if (container.firstChild) {
+  if (planTitle.firstChild) {
 
     let title = planTitle.options[planTitle.selectedIndex].value;
     let week = planWeek.options[planWeek.selectedIndex].value;
