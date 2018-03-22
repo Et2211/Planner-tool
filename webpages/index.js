@@ -8,7 +8,6 @@ function init(){
   listen();
 }
 
-
  function listen() {
      document.getElementById('planSelector').addEventListener('change', loadPlan);
      document.getElementById('topic').addEventListener('change', loadData);
@@ -19,10 +18,7 @@ function init(){
      document.getElementById("main2").addEventListener('change', saveData);
      document.getElementById("main3").addEventListener('change', saveData);
      document.getElementById("newPlan").addEventListener('click', newPlan);
-
-
  }
-
 
 async function loadTitles() {
     const url = '/api/planner/title';
@@ -35,11 +31,8 @@ async function loadTitles() {
     }
   }
 
-
 function fillTitles(titlesArray){
-
   let el = document.getElementById("planSelector");
-
   for (let title of titlesArray){
 
     let opt = document.createElement("option");
@@ -49,12 +42,9 @@ function fillTitles(titlesArray){
   }
 }
 
-
 async function loadPlan() {
 
   let planTitle = document.getElementById("planSelector");
-
-
   let title = planTitle.options[planTitle.selectedIndex].value;
   const url = '/api/planner/new?title=' + encodeURIComponent(title)
   const response = await fetch(url);
@@ -69,10 +59,9 @@ async function loadPlan() {
 function fillWeeks(weeks){
 
     let container = document.getElementById("topic")
-
     while (container.firstChild) {
         container.removeChild(container.firstChild);
-      }
+    }
 
     let temp2 = weeks[0]
     let numOfWeeks = temp2["count(*)"]
@@ -83,19 +72,15 @@ function fillWeeks(weeks){
       el.textContent = "Week " + i
       container.appendChild(el)
       loadData()
-      }
+    }
 }
-
 
 async function loadData() {
 
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
-
   let title = planTitle.options[planTitle.selectedIndex].value;
   let week = planWeek.options[planWeek.selectedIndex].value;
-
-
 
   const url = '/api/planner?title=' + encodeURIComponent(title) + '&week=' + encodeURIComponent(week);
 
@@ -108,9 +93,7 @@ async function loadData() {
   }
 }
 
-
 async function saveData(e) {
-
 
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
@@ -123,17 +106,14 @@ async function saveData(e) {
   url += '&title=' + encodeURIComponent(title);
   url += '&week=' + encodeURIComponent(week);
 
-
   const response = await fetch(url, { method: 'PATCH' });
   if (response.ok) {
      console.log(await response.json());
-
  }
  else {
    console.error('error getting', response.status, response.statusText);
  }
 }
-
 
 async function newPlan() {
 
@@ -141,11 +121,9 @@ async function newPlan() {
   let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
   numOfWeeks = (parseFloat(numOfWeeks) + 1);
 
-
   if (Number.isInteger(numOfWeeks)) {
 
     const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
-
     const response = await fetch(url, { method: 'POST' });
     if (response.ok) {
       console.log(await response.json());
@@ -154,7 +132,6 @@ async function newPlan() {
     else {
       console.error('error getting', response.status, response.statusText);
       }
-
   }
   else {
     alert("Number of weeks must be an integer")
@@ -164,20 +141,14 @@ async function newPlan() {
 function addTitle(name){
   let planTitle = document.getElementById("planSelector");
   let el = document.createElement("option");
-
   el.textContent = name;
   planTitle.appendChild(el);
-
   loadPlan()
-
 }
-
-
 
 function fillheaders(headers) {
 
    for (let head of headers) {
-
      let title = (head.title);
 
      let header1 = document.getElementById("header1");
@@ -196,9 +167,5 @@ function fillheaders(headers) {
      main2.value = head.main2;
      main3.value = head.main3;
   }
-
-
 }
-
-
 window.addEventListener("load", init);
