@@ -119,7 +119,7 @@ async function loadData() {
     else {
       console.log("No database")
     }
-
+}
 
 async function saveData(e) {
 
