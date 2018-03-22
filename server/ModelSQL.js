@@ -29,45 +29,33 @@ async function newPlan(name, weeks){
 
   const sql = await init()
   const query1 = sql.format('INSERT INTO planNames (planName) VALUES (?)', [name]);
-    console.log(query1)
   const [rows] = await sql.query(query1);
 
-  console.log(weeks)
   for (let i = 1; i < weeks; i++) {
     const sql = await init()
     let query2 = sql.format('INSERT INTO headerNames (planName, Week, header1, header2, header3, main1, main2, main3) VALUES (?, "Week ' + i + '", "", "", "", "", "", "")', [name]);
-
-    console.log(query2)
     const [rows2] = await sql.query(query2)
-
   }
-
   return rows;
 }
 
 async function getPlan(planName){
 
     const sql = await init();
-
     const query = sql.format('select count(*) from headerNames where planName=?', [planName])
-    console.log(query);
     const [rows] = await sql.query(query);
     return rows;
 }
 
-
 async function updateData(id, data, title, week){
 
     const sql = await init();
-
     const query = sql.format('UPDATE headerNames SET ' + id + '= ? WHERE planName=? AND Week=?', [data[0], title, week])
-    console.log(query);
     const [rows] = await sql.query(query);
     return rows;
 }
 
 let sqlPromise = null;
-
 
 async function init() {
   if (sqlPromise) return sqlPromise;
