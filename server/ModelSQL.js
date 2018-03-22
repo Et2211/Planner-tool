@@ -44,7 +44,7 @@ async function newPlan(name, weeks){
   return rows;
 }
 
-async function getPlan(planName)){
+async function getPlan(planName){
 
     const sql = await init();
 
