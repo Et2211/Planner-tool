@@ -76,7 +76,7 @@ async function loadPlan() {
 function fillWeeks(weeks){
 
     let container = document.getElementById("topic")
-
+    console.log(weeks)
     while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
@@ -85,7 +85,7 @@ function fillWeeks(weeks){
     let numOfWeeks = temp2["count(*)"]
 
     for (let i = 1; i < (numOfWeeks + 1); i++) {
-
+      console.log(i)
       let el = document.createElement("option")
       el.textContent = "Week " + i
       container.appendChild(el)
