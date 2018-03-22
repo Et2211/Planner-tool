@@ -150,7 +150,7 @@ async function newPlan() {
   numOfWeeks = parseFloat(numOfWeeks);
   console.log(numOfWeeks)
   numOfWeeks = Math.round(numOfWeeks);
-  console.log(encodeURIComponent(numOfWeeks))
+  console.log(numOfWeeks)
   if (Number.isInteger(numOfWeeks)) {
 
     const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
