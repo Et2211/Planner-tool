@@ -1,7 +1,7 @@
 'use strict'
 
 let currentPlan;
-function boot(){
+function init(){
 
   loadTitles();
   let timeout = window.setTimeout(loadPlan, 500); // Allows time for loadTitles() to fetch titles, else results in error
@@ -149,7 +149,7 @@ async function newPlan() {
     const response = await fetch(url, { method: 'POST' });
     if (response.ok) {
       console.log(await response.json());
-      loadTitles()
+      init()
     }
     else {
       console.error('error getting', response.status, response.statusText);
