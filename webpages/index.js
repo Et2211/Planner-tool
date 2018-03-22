@@ -58,15 +58,14 @@ async function loadPlan() {
   let title = planTitle.options[planTitle.selectedIndex].value;
 
 
-  console.log(title)
+
 
   const url = '/api/planner/new?title=' + encodeURIComponent(title)
 
   const response = await fetch(url);
   if (response.ok) {
-      let temp = await response.json()
-      console.log(temp);
-      fillWeeks(temp)
+
+      fillWeeks(await response.json())
 
   }
   else {
@@ -103,15 +102,13 @@ async function loadData() {
   let title = planTitle.options[planTitle.selectedIndex].value;
   let week = planWeek.options[planWeek.selectedIndex].value;
 
-  console.log(title)
+
 
   const url = '/api/planner?title=' + encodeURIComponent(title) + '&week=' + encodeURIComponent(week);
 
   const response = await fetch(url);
   if (response.ok) {
-      let temp = await response.json()
-      console.log(temp);
-      fillheaders(temp);
+      fillheaders(await response.json());
   }
   else {
     console.error('error getting', response.status, response.statusText);
@@ -121,7 +118,7 @@ async function loadData() {
 
 async function saveData(e) {
 
-  console.log('run');
+
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
   let title = planTitle.options[planTitle.selectedIndex].value;
@@ -133,7 +130,7 @@ async function saveData(e) {
   url += '&title=' + encodeURIComponent(title);
   url += '&week=' + encodeURIComponent(week);
 
-  console.log(url);
+
   const response = await fetch(url, { method: 'PATCH' });
   if (response.ok) {
      console.log(await response.json());
@@ -155,7 +152,7 @@ async function newPlan() {
   if (Number.isInteger(numOfWeeks)) {
 
     const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
-    console.log(url);
+    
     const response = await fetch(url, { method: 'POST' });
     if (response.ok) {
       console.log(await response.json());
