@@ -31,7 +31,7 @@ async function newPlan(name, weeks){
   const query1 = sql.format('INSERT INTO planNames (planName) VALUES (?)', [name]);
     console.log(query1)
   const [rows] = await sql.query(query1);
-  weeks = weeks + 1
+
   console.log(weeks)
   for (let i = 1; i < weeks; i++) {
     const sql = await init()
