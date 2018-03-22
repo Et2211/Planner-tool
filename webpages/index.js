@@ -4,14 +4,14 @@ let currentPlan;
 function boot(){
 
   loadTitles();
-//  let timeout = window.setTimeout(loadData, 500); // Allows time for loadTitles() to fetch titles, else results in error
+  let timeout = window.setTimeout(loadPlan, 500); // Allows time for loadTitles() to fetch titles, else results in error
   listen();
 }
 
 
  function listen() {
      document.getElementById('planSelector').addEventListener('change', loadPlan);
-    // document.getElementById('topic').addEventListener('change', loadData);
+     document.getElementById('topic').addEventListener('change', loadData);
      document.getElementById("header1").addEventListener('change', saveData);
      document.getElementById("header2").addEventListener('change', saveData);
      document.getElementById("header3").addEventListener('change', saveData);
@@ -90,7 +90,7 @@ function fillWeeks(weeks){
       let el = document.createElement("option")
       el.textContent = "Week " + i
       container.appendChild(el)
-
+      loadData()
       }
 }
 
