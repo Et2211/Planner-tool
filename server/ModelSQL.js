@@ -32,7 +32,7 @@ async function newPlan(name, weeks){
     console.log(query1)
   const [rows] = await sql.query(query1);
 
-  for (let i = 1; i < weeks; i++) {
+  for (let i = 1; i < (weeks + 1); i++) {
     const sql = await init()
     let query2 = sql.format('INSERT INTO headerNames (planName, Week, header1, header2, header3, main1, main2, main3) VALUES (?, "Week ' + i + '", "", "", "", "", "", "")', [name]);
 
@@ -42,6 +42,16 @@ async function newPlan(name, weeks){
   }
 
   return rows;
+}
+
+async function getPlan(planName)){
+
+    const sql = await init();
+
+    const query = sql.format('select count(*) from headerNames where planName=?', [planName])
+    console.log(query);
+    const [rows] = await sql.query(query);
+    return rows;
 }
 
 

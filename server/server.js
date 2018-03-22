@@ -6,6 +6,7 @@ const db = require('./ModelSQL');
 
 app.get('/api/planner', getHeaders)
 app.get('/api/planner/title', getTitle)
+app.get('/api/planner/new', getplan)
 app.post('/api/planner/new', newPlan)
 app.patch('/api/planner/saveData', updateData)
 
@@ -22,6 +23,13 @@ async function getHeaders(req, res) {
 	const header = await db.getHeaders(req.query.title, req.query.week);
 	res.json(header);
 }
+
+async function getPlan(req, res) {
+
+	const header = await db.getPlan(req.query.title);
+	res.json(header);
+}
+
 
 async function newPlan (req, res) {
   const name = await db.newPlan(req.query.name, req.query.weeks);

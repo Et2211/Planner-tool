@@ -50,6 +50,29 @@ function fillTitles(titlesArray){
 }
 
 
+async function loadPlan() {
+
+  let planTitle = document.getElementById("planSelector");
+  let planWeek = document.getElementById("topic")
+
+  let title = planTitle.options[planTitle.selectedIndex].value;
+
+
+  console.log(title)
+
+  const url = '/api/planner/new?title=' + encodeURIComponent(title)
+
+  const response = await fetch(url);
+  if (response.ok) {
+      let temp = await response.json()
+      console.log(temp);
+    
+  }
+  else {
+    console.error('error getting', response.status, response.statusText);
+  }
+}
+
 
 async function loadData() {
 
