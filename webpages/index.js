@@ -145,14 +145,15 @@ async function saveData(e) {
 async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
-  let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
+  let numOfWeeks = window.prompt("Enter the number of weeks for this unit (Decimals will be rounded to the nearest integer)");
 
   numOfWeeks = parseInt(numOfWeeks, 10)
+  numOfWeeks = Math.round(numOfWeeks)
 
   if (Number.isInteger(numOfWeeks)) {
 
     const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
-    
+
     const response = await fetch(url, { method: 'POST' });
     if (response.ok) {
       console.log(await response.json());
