@@ -75,7 +75,7 @@ async function loadPlan() {
 }
 
 function fillWeeks(weeks){
-    console.log(weeks[0].count(*))
+    console.log(weeks[0])
 }
 
 
