@@ -66,11 +66,16 @@ async function loadPlan() {
   if (response.ok) {
       let temp = await response.json()
       console.log(temp);
+      fillWeeks(temp)
 
   }
   else {
     console.error('error getting', response.status, response.statusText);
   }
+}
+
+function fillWeeks(weeks){
+    console.log(weeks[0])
 }
 
 
