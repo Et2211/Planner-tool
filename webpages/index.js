@@ -53,7 +53,7 @@ function fillTitles(titlesArray){
 async function loadPlan() {
 
   let planTitle = document.getElementById("planSelector");
-  //let planWeek = document.getElementById("topic")
+
 
   let title = planTitle.options[planTitle.selectedIndex].value;
   const url = '/api/planner/new?title=' + encodeURIComponent(title)
@@ -139,9 +139,7 @@ async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
   let numOfWeeks = window.prompt("Enter the number of weeks for this unit (Decimals will be rounded to the nearest integer)");
-
   numOfWeeks = (parseFloat(numOfWeeks) + 1);
-
   numOfWeeks = Math.round(numOfWeeks);
 
   if (Number.isInteger(numOfWeeks)) {
