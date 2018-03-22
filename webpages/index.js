@@ -54,23 +54,16 @@ async function loadPlan() {
 
   let planTitle = document.getElementById("planSelector");
   //let planWeek = document.getElementById("topic")
-  console.log(planTitle.hasChildNodes())
-  if (planTitle.hasChildNodes()){
 
-    let title = planTitle.options[planTitle.selectedIndex].value;
-
-    const url = '/api/planner/new?title=' + encodeURIComponent(title)
-    const response = await fetch(url);
-    if (response.ok) {
-        fillWeeks(await response.json())
-      }
-      else {
-        console.error('error getting', response.status, response.statusText);
-      }
-    }
-    else{
-      console.log("no database")
-    }
+  let title = planTitle.options[planTitle.selectedIndex].value;
+  const url = '/api/planner/new?title=' + encodeURIComponent(title)
+  const response = await fetch(url);
+  if (response.ok) {
+      fillWeeks(await response.json())
+  }
+  else {
+    console.error('error getting', response.status, response.statusText);
+  }
 }
 
 function fillWeeks(weeks){
