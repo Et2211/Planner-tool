@@ -25,14 +25,14 @@ async function getHeaders(title, week) {
 }
 
 
-async function newPlan(name){
+async function newPlan(name, weeks){
 
   const sql = await init()
   const query1 = sql.format('INSERT INTO planNames (planName) VALUES (?)', [name]);
     console.log(query1)
   const [rows] = await sql.query(query1);
 
-  for (let i = 1; i < 13; i++) {
+  for (let i = 1; i < weeks; i++) {
     const sql = await init()
     let query2 = sql.format('INSERT INTO headerNames (planName, Week, header1, header2, header3, main1, main2, main3) VALUES (?, "Week ' + i + '", "", "", "", "", "", "")', [name]);
 

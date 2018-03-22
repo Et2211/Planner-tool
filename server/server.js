@@ -24,7 +24,7 @@ async function getHeaders(req, res) {
 }
 
 async function newPlan (req, res) {
-  const name = await db.newPlan(req.query.name);
+  const name = await db.newPlan(req.query.name, req.query.weeks);
   res.json(name);
 
 }
