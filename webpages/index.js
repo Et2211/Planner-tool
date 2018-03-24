@@ -18,6 +18,7 @@ function init(){
      document.getElementById("main2").addEventListener('change', saveData);
      document.getElementById("main3").addEventListener('change', saveData);
      document.getElementById("newPlan").addEventListener('click', newPlan);
+     document.getElementById("deletePlan").addEventListener('click', deletePlan);
  }
 
 async function loadTitles() {
@@ -140,6 +141,14 @@ async function newPlan() {
     alert("Number of weeks must be an integer")
   }
 }
+
+async function deletePlan() {
+
+  let planTitle = document.getElementById("planSelector");
+  let title = planTitle.options[planTitle.selectedIndex].value;
+  console.log(title)
+}
+
 
 function addTitle(name){
   let planTitle = document.getElementById("planSelector");
