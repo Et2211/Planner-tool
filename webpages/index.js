@@ -147,12 +147,12 @@ async function deletePlan() {
   let planTitle = document.getElementById("planSelector");
   let title = planTitle.options[planTitle.selectedIndex].value;
   console.log(title)
-
+  window.location.reload(true);
   const url = '/api/planner/delete?title=' + encodeURIComponent(title)
   const response = await fetch(url, { method: 'DELETE' });
   if (response.ok) {
     console.log(await response.json());
-    init()
+
   }
 
   else {
