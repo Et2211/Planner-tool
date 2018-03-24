@@ -49,11 +49,11 @@ async function getPlan(planName){
 
 async function deletePlan(planName){
 
-    const sql = await init();
+    let sql = await init();
     const query1 = sql.format('DELETE FROM headerNames WHERE planName=?', [planName])
     const [rows] = await sql.query(query1);
 
-    const sql = await init();
+    let sql = await init();
     const query2 = sql.format('DELETE FROM planNames WHERE planName=?', [planName])
     const [rows2] = await sql.query(query2);
     return rows;
