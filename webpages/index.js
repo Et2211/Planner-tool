@@ -119,8 +119,7 @@ async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
   let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
-  numOfWeeks = (parseFloat(numOfWeeks) + 1);
-  console.log(numOfWeeks)
+  
   if (Number.isInteger(numOfWeeks)) {
 
     const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
