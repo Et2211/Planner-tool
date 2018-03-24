@@ -47,6 +47,18 @@ async function getPlan(planName){
     return rows;
 }
 
+async function deletePlan(planName){
+
+    const sql = await init();
+    const query1 = sql.format('DELETE FROM headerNames WHERE planName=?', [planName])
+    const [rows] = await sql.query(query1);
+
+    const sql = await init();
+    const query2 = sql.format('DELETE FROM planNames WHERE planName=?', [planName])
+    const [rows2] = await sql.query(query2);
+    return rows;
+}
+
 async function updateData(id, data, title, week){
 
     const sql = await init();
@@ -97,6 +109,7 @@ module.exports = {
   getTitles: getTitles,
   updateData: updateData,
   newPlan: newPlan,
-  getPlan: getPlan
+  getPlan: getPlan,
+  deletePlan: deletePlan
 
 }

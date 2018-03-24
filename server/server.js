@@ -9,6 +9,7 @@ app.get('/api/planner/title', getTitle)
 app.get('/api/planner/new', getPlan)
 app.post('/api/planner/new', newPlan)
 app.patch('/api/planner/saveData', updateData)
+app.delete('/api/planner/delete', deletePlan)
 
 
 
@@ -34,7 +35,11 @@ async function getPlan(req, res) {
 async function newPlan (req, res) {
   const name = await db.newPlan(req.query.name, req.query.weeks);
   res.json(name);
+}
 
+async function deletePlan(req, res) {
+  const del = await db.deletePlan(req.query.title);
+  res.json(del)
 }
 
 async function updateData(req, res) {

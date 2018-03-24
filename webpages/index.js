@@ -147,6 +147,17 @@ async function deletePlan() {
   let planTitle = document.getElementById("planSelector");
   let title = planTitle.options[planTitle.selectedIndex].value;
   console.log(title)
+
+  const url = '/api/planner/delete?title=' + encodeURIComponent(title)
+  const response = await fetch(url, { method: 'DELETE' });
+  if (response.ok) {
+    console.log(await response.json());
+  }
+
+  else {
+    console.error('error getting', response.status, response.statusText);
+  }
+
 }
 
 
