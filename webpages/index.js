@@ -152,6 +152,7 @@ async function deletePlan() {
   const response = await fetch(url, { method: 'DELETE' });
   if (response.ok) {
     console.log(await response.json());
+    loadTitles();
   }
 
   else {
