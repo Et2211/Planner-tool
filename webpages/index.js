@@ -119,22 +119,31 @@ async function newPlan() {
 
   let newPlanName = window.prompt("Enter the name of your new plan");
   let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
-  
-  if (Number.isInteger(numOfWeeks)) {
 
-    const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
-    const response = await fetch(url, { method: 'POST' });
-    if (response.ok) {
-      console.log(await response.json());
-      addTitle(newPlanName)
+  if (!isNaN(numOfWeeks))  {
+
+    if (Number.isInteger(numOfWeeks)) {
+
+      numOfWe
+
+      const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
+      const response = await fetch(url, { method: 'POST' });
+      if (response.ok) {
+        console.log(await response.json());
+        addTitle(newPlanName)
+      }
+      else {
+        console.error('error getting', response.status, response.statusText);
+        }
+      }
+      else {
+        alert("Number of weeks must be an integer")
+      }
     }
     else {
-      console.error('error getting', response.status, response.statusText);
-      }
-  }
-  else {
-    alert("Number of weeks must be an integer")
-  }
+      alert("Number of weeks must be an integer")
+    }
+
 }
 
 function addTitle(name){
