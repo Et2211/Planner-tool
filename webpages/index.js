@@ -98,8 +98,8 @@ async function saveData(e) {
 
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
-  let title = planTitle.options[planTitle.selectedIndex].value;
-  let week = planWeek.options[planWeek.selectedIndex].value;
+  let title = planTitle.value;
+  let week = planWeek.value;
 
   if (planTitle.value == undefined || planTitle.value == ''){
     simplePopup(0, 'No plan to save to. Create a new plan')
