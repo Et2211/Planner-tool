@@ -81,6 +81,7 @@ async function loadData() {
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
   let title = planTitle.options[planTitle.selectedIndex].value;
+  console.log(title)
   let week = planWeek.options[planWeek.selectedIndex].value;
 
   const url = '/api/planner?title=' + encodeURIComponent(title) + '&week=' + encodeURIComponent(week);
