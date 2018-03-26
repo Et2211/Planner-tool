@@ -99,8 +99,11 @@ async function saveData(e) {
   let planTitle = document.getElementById("planSelector");
   let planWeek = document.getElementById("topic")
   let title = planTitle.options[planTitle.selectedIndex].value;
-    console.log(planTitle)
   let week = planWeek.options[planWeek.selectedIndex].value;
+
+  if (planTitle.value == undefined || planTitle.value == ''){
+    simplePopup(0, 'No plan to save to. Create a new plan')
+  }
 
   let url = '/api/planner/saveData?id=' + encodeURIComponent(e.target.id) + '&data=' + encodeURIComponent(e.target.value);
 
@@ -144,7 +147,7 @@ async function newPlan() {
         }
       }
       else {
-        simplePopup(0, 'Number of weeks must be an integer',)
+        simplePopup(0, 'Number of weeks must be an integer')
       }
     }
 }
