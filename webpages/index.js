@@ -119,28 +119,33 @@ async function saveData(e) {
 async function newPlan() {
 
   let newPlanName = await simplePopup(2, 'Please enter name for this plan', '')
-  let numOfWeeks = await simplePopup(2, 'Please enter the number of weeks for this plan', '')
-  console.log(newPlanName + numOfWeeks)
-
-  if (!isNaN(numOfWeeks)) {
-    numOfWeeks = (parseFloat(numOfWeeks) + 1);
-  }
-
-  if (Number.isInteger(numOfWeeks)) {
-
-    const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
-    const response = await fetch(url, { method: 'POST' });
-    if (response.ok) {
-      console.log(await response.json());
-      addTitle(newPlanName)
-    }
-    else {
-      console.error('error getting', response.status, response.statusText);
-      }
+  if (newPlanName == null || newPlanName == ''){
+    simplePopup(0, 'Plan must have a name',)
   }
   else {
-    simplePopup(0, 'Number of weeks must be an integer',)
-  }
+    let numOfWeeks = await simplePopup(2, 'Please enter the number of weeks for this plan', '')
+    console.log(newPlanName + numOfWeeks)
+
+    if (!isNaN(numOfWeeks)) {
+      numOfWeeks = (parseFloat(numOfWeeks) + 1);
+    }
+
+    if (Number.isInteger(numOfWeeks)) {
+
+      const url = '/api/planner/new?name=' + encodeURIComponent(newPlanName) + "&weeks=" + encodeURIComponent(numOfWeeks);
+      const response = await fetch(url, { method: 'POST' });
+      if (response.ok) {
+        console.log(await response.json());
+        addTitle(newPlanName)
+      }
+      else {
+        console.error('error getting', response.status, response.statusText);
+        }
+      }
+      else {
+        simplePopup(0, 'Number of weeks must be an integer',)
+      }
+    }
 }
 
 async function deletePlan() {
