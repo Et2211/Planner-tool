@@ -1,13 +1,9 @@
-:root {
-  --rows: 3;
-  --coloumns: 3;
 
-}
 
 body {
   display: grid;
   grid-template-columns: repeat(3, 1fr));
-  grid-template-rows:  4em , 4em, 1fr);
+  grid-template-rows:  8em, 4em, 1fr);
 
   grid-template-areas: "head head2 head3"
                        "master master2 master3"
