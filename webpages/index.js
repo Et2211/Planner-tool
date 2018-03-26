@@ -103,6 +103,7 @@ async function saveData(e) {
 
   if (planTitle.value == undefined || planTitle.value == ''){
     simplePopup(0, 'No plan to save to. Create a new plan')
+    console.log(e.target)
     e.target.textContent = ''
   }
 
