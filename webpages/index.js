@@ -358,7 +358,7 @@ window.addEventListener("load", init);
         }
         overlay = document.querySelector('#popup-overlay');
         overlay.querySelector('.simple-popup').setAttribute('class', 'simple-popup prompt-box');
-        overlay.querySelector('.popup-icon').textContent = ':)';
+        overlay.querySelector('.popup-icon').textContent = '📚';
         overlay.querySelector('.popup-input').value = defaultText;
         overlay.querySelector('.popup-input').select();
       }
