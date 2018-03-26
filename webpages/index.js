@@ -118,8 +118,9 @@ async function saveData(e) {
 
 async function newPlan() {
 
-  let newPlanName = window.prompt("Enter the name of your new plan");
-  let numOfWeeks = window.prompt("Enter the number of weeks for this unit");
+  let newPlanName = await simplePopup(2, 'Please enter name for this plan', '')
+  let numOfWeeks = await simplePopup(2, 'Please enter the number of weeks for this plan', '')
+  console.log(newPlanName + numOfWeeks)
 
   if (!isNaN(numOfWeeks)) {
     numOfWeeks = (parseFloat(numOfWeeks) + 1);
@@ -138,7 +139,7 @@ async function newPlan() {
       }
   }
   else {
-    alert("Number of weeks must be an integer")
+    simplePopup(0, 'Number of weeks must be an integer',)
   }
 }
 
