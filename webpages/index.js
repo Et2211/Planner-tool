@@ -123,7 +123,7 @@ async function newPlan() {
     simplePopup(0, 'Plan must have a name',)
   }
   else {
-    let numOfWeeks = await simplePopup(2, 'Please enter the number of weeks for this plan', '')
+    let numOfWeeks = await simplePopup(2, 'How many weeks will this plan have?', '')
     console.log(newPlanName + numOfWeeks)
 
     if (!isNaN(numOfWeeks)) {
@@ -200,8 +200,11 @@ function fillheaders(headers) {
 }
 window.addEventListener("load", init);
 
-
-
+/**
+* None of the following code is my own. The following code is from a gitHub repository called Simple-Popup be Dabeng.
+* The intention of this code is to remove the need for default javascript prompt boxes, which often frustrate users because of their intrusiveness
+* https://github.com/dabeng/Simple-Popup
+*/
 
 (function(){
 

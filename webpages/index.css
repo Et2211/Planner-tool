@@ -11,7 +11,6 @@ body {
 }
 
 #planSelector {
-
   grid-area: head;
   height: 3em;
 }
@@ -23,7 +22,6 @@ body {
 #header1 {
   grid-area: master;
   height: 3em;
-
 }
 #header2 {
   grid-area: master2;
@@ -36,7 +34,6 @@ body {
 .headers {
     padding: 0;
     margin: 0;
-
 }
 
 .mainText{
@@ -44,31 +41,26 @@ body {
   margin: 0;
   height: 100em;
 }
-
 #main1  {
 
   grid-area: lowest1;
-
 }
-
 #main2  {
   grid-area: lowest2;
-
 }
-
 #main3  {
   grid-area: lowest3;
-
 }
-
 button {
   margin-top: 1em;
   margin-left: 2em;
 }
 
-
-
-
+/**
+* None of the following code is my own. The following code is from a gitHub repository called Simple-Popup be Dabeng.
+* The intention of this code is to remove the need for default javascript prompt boxes, which often frustrate users because of their intrusiveness
+* https://github.com/dabeng/Simple-Popup
+*/
 
 
 .disable-scrollbar {
