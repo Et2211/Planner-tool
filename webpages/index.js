@@ -103,6 +103,7 @@ async function saveData(e) {
 
   if (planTitle.value == undefined || planTitle.value == ''){
     simplePopup(0, 'No plan to save to. Create a new plan')
+    e.target.textContent = ''
   }
 
   let url = '/api/planner/saveData?id=' + encodeURIComponent(e.target.id) + '&data=' + encodeURIComponent(e.target.value);
