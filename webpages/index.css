@@ -36,7 +36,7 @@ body {
     padding: 0;
     margin: 0;
     border-style: solid;
-    border-width: 0.3em;
+    border-width: thin;
     border-color: black;
 }
 
@@ -44,14 +44,13 @@ body {
   padding: 0;
   margin: 0;
   height: 100em;
-  border-style: solid;
-  border-width: 0.3em;
+  border-style:thin;
   border-color: black;
 }
 
 .element{
   border-style: solid;
-  border-width: 0.3em;
+  border-width: thin;
   border-color: black;
 }
 #main1  {
