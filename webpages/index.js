@@ -162,7 +162,7 @@ async function deletePlan() {
     simplePopup(0, 'There is no plan to delete!')
   }
   else {
-    let check = await simplePopup(1, 'Are you sure you want to delete the plan: ' + title)
+    let check = await simplePopup(1, 'Are you sure you want to delete the plan: ' + title + '?')
 
     if (check) {
       window.location.reload(true);
