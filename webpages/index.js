@@ -155,12 +155,14 @@ async function newPlan() {
 
 async function deletePlan() {
 
-  let check = await simplePopup(1, 'It\'s time to change. Do you agree with me?')
+  let planTitle = document.getElementById("planSelector");
+  let title = planTitle.value;
+
+  let check = await simplePopup(1, 'Are you sure you want to delete the plan: ' + title)
   console.log(check)
   if (check) {
-    let planTitle = document.getElementById("planSelector");
-    let title = planTitle.options[planTitle.selectedIndex].value;
-    console.log(title)
+
+
     window.location.reload(true);
     const url = '/api/planner/delete?title=' + encodeURIComponent(title)
     const response = await fetch(url, { method: 'DELETE' });
