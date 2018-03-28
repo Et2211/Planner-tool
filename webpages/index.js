@@ -158,21 +158,25 @@ async function deletePlan() {
   let planTitle = document.getElementById("planSelector");
   let title = planTitle.value;
   console.log(title)
-  let check = await simplePopup(1, 'Are you sure you want to delete the plan: ' + title)
+  if (title == null || title == '' || title == undefined) {
+    simplePopup(0, 'There is no plan to delete!')
+  }
+  else {
+    let check = await simplePopup(1, 'Are you sure you want to delete the plan: ' + title)
 
-  if (check) {
-    window.location.reload(true);
-    const url = '/api/planner/delete?title=' + encodeURIComponent(title)
-    const response = await fetch(url, { method: 'DELETE' });
-    if (response.ok) {
-      console.log(await response.json());
-    }
-    else {
-      console.error('error getting', response.status, response.statusText);
+    if (check) {
+      window.location.reload(true);
+      const url = '/api/planner/delete?title=' + encodeURIComponent(title)
+      const response = await fetch(url, { method: 'DELETE' });
+      if (response.ok) {
+        console.log(await response.json());
+      }
+      else {
+        console.error('error getting', response.status, response.statusText);
+      }
     }
   }
 }
-
 
 function addTitle(name){
   let planTitle = document.getElementById("planSelector");
