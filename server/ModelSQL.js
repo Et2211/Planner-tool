@@ -1,12 +1,14 @@
 'use strict';
-
+//global variables
 const fs = require('fs');
 const util = require('util');
 const config = require('./config.json');
 const mysql = require('mysql2/promise');
 let sql;
 
-
+/**
+* @return {name of plans} returns all the plan names from the database
+*/
 async function getTitles() {
   const sql = await init();
   const query = 'SELECT planName FROM planNames'
@@ -14,17 +16,21 @@ async function getTitles() {
   return rows;
 }
 
-
+/**
+* @param {plan title, week number} returns all data for the selected plan from the database
+* @return {name of plans}
+*/
 async function getHeaders(title, week) {
   const sql = await init();
-  const filter1 = '%' + title + '%';
-  const filter2 = '%' + week + '%';
   const query = sql.format('SELECT * FROM headerNames WHERE planName=? AND Week=?', [title, week])
   const [rows] = await sql.query(query);
   return rows;
 }
 
-
+/**
+* @param {plan name, weeks} Inserts a new plan into the database
+* @return {sql query result} Inserts a new plan into the database
+*/
 async function newPlan(name, weeks){
 
   const sql = await init()
@@ -39,6 +45,10 @@ async function newPlan(name, weeks){
   return rows;
 }
 
+/**
+* @param {name of plan} returns all fields for data with the passed plan name
+* @return {plan data}
+*/
 async function getPlan(planName){
 
     const sql = await init();
@@ -46,7 +56,10 @@ async function getPlan(planName){
     const [rows] = await sql.query(query);
     return rows;
 }
-
+/**
+* @param {name of plan} deleles all fields with the passed planName
+* @return {sql query result}
+*/
 async function deletePlan(planName){
 
     let sql = await init();
@@ -59,6 +72,10 @@ async function deletePlan(planName){
     return rows;
 }
 
+/**
+* @param {plan ID, updated data, plan title, week number} Updates the plan data with the attribute passed
+* @return {sql query result}
+*/
 async function updateData(id, data, title, week){
 
     const sql = await init();
@@ -67,8 +84,14 @@ async function updateData(id, data, title, week){
     return rows;
 }
 
+
+//global variable initilisation
 let sqlPromise = null;
 
+/**
+* Creates a connection to the database
+* @return {sqlPromise}
+*/
 async function init() {
   if (sqlPromise) return sqlPromise;
 
@@ -76,6 +99,10 @@ async function init() {
   return sqlPromise;
 }
 
+/**
+* Shuts down connection to the database
+* @return {sql query result}
+*/
 async function shutDown() {
   if (!sqlPromise) return;
   const stashed = sqlPromise;
@@ -83,6 +110,10 @@ async function shutDown() {
   await releaseConnection(await stashed);
 }
 
+/**
+* Creates a new connection to the database
+* @return {new connection}
+*/
 async function newConnection() {
   // todo: this should really use connection pools
   const sql = await mysql.createConnection(config.mysql);
@@ -92,18 +123,18 @@ async function newConnection() {
     console.error(err);
     sql.end();
   });
-
   return sql;
 }
 
+/**
+* Ends connection to the database
+*/
 async function releaseConnection(connection) {
   await connection.end();
 }
 
-
 module.exports = {
   init: init,
-
   getHeaders:getHeaders,
   shutDown: shutDown,
   getTitles: getTitles,
