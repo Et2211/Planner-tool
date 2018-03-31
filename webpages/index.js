@@ -1,5 +1,8 @@
 'use strict'
 
+/**
+* Calls functions to initilise the page with data in the database
+*/
 function init(){
 
   loadTitles();
@@ -7,6 +10,9 @@ function init(){
   listen();
 }
 
+/**
+* Adds event listeners to elements on the page
+*/
  function listen() {
      document.getElementById('planSelector').addEventListener('change', loadPlan);
      document.getElementById('topic').addEventListener('change', loadData);
@@ -20,6 +26,9 @@ function init(){
      document.getElementById("deletePlan").addEventListener('click', deletePlan);
  }
 
+ /**
+ * Loads titles to add to the planSelector dropdown element
+ */
 async function loadTitles() {
     const url = '/api/planner/title';
     const response = await fetch(url);
@@ -31,6 +40,10 @@ async function loadTitles() {
     }
   }
 
+/**
+* @param {array of titles} takes an array of titles from the database and inputs
+* one by one into the dropdown element as an "option" element
+*/
 function fillTitles(titlesArray){
   let el = document.getElementById("planSelector");
   for (let title of titlesArray){
@@ -41,11 +54,14 @@ function fillTitles(titlesArray){
 
   }
 }
-
+/**
+* fetches data from the database to fill headers and main sections when a change
+* in plan or week is made
+*/
 async function loadPlan() {
 
   let planTitle = document.getElementById("planSelector");
-  let title = planTitle.options[planTitle.selectedIndex].value;
+  let title = planTitle.value;
   const url = '/api/planner/new?title=' + encodeURIComponent(title)
   const response = await fetch(url);
   if (response.ok) {
@@ -56,6 +72,11 @@ async function loadPlan() {
   }
 }
 
+/**
+* @param {number of weeks} takes an array returned from the database, which
+* contains the count of how many weeks a certain plan has, and adds that number
+* of weeks to the dropdown element
+*/
 function fillWeeks(weeks){
 
     let container = document.getElementById("topic")
@@ -75,6 +96,9 @@ function fillWeeks(weeks){
     }
 }
 
+/**
+* Detects the current plan and week selected and retrives the data in the database for that week
+*/
 async function loadData() {
 
   let planTitle = document.getElementById("planSelector");
@@ -93,6 +117,10 @@ async function loadData() {
   }
 }
 
+/**
+* @param {event} takes an event and saves the data within the event target to
+* the database
+*/
 async function saveData(e) {
 
   let planTitle = document.getElementById("planSelector");
@@ -120,10 +148,14 @@ async function saveData(e) {
  }
 }
 
+/**
+* Uses the simplePopup addon to create a simple form for the user to fill in.
+* Then takes that data and adds a new plan to the database
+*/
 async function newPlan() {
 
   let newPlanName = await simplePopup(2, 'Please enter name for this plan', '')
-  if (newPlanName == null || newPlanName == ''){
+  if (newPlanName == null || newPlanName == ''){ // textfield is left blank
     simplePopup(0, 'Plan must have a name',)
   }
   else {
@@ -152,6 +184,11 @@ async function newPlan() {
     }
 }
 
+/**
+* Takes the current selected plan, confirms the user is sure this is what they
+* want to do, and deletes it from the database. Then reloads the page with the
+* with the new list of plans
+*/
 async function deletePlan() {
 
   let planTitle = document.getElementById("planSelector");
@@ -177,6 +214,10 @@ async function deletePlan() {
   }
 }
 
+/**
+* @param {name} takes the name of a new plan enetered by the user, and appends
+* it to the planSelector dropdown.
+*/
 function addTitle(name){
   let planTitle = document.getElementById("planSelector");
   let el = document.createElement("option");
@@ -185,6 +226,9 @@ function addTitle(name){
   loadPlan()
 }
 
+/**
+* @param {header and main data} Fills the textArea elements and headers with the correct data from the database
+*/
 function fillheaders(headers) {
 
    for (let head of headers) {
@@ -207,6 +251,8 @@ function fillheaders(headers) {
      main3.value = head.main3;
   }
 }
+
+// calls the init() function on page load
 window.addEventListener("load", init);
 
 /**
