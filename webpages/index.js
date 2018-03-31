@@ -1,6 +1,6 @@
 'use strict'
 
-let currentPlan;
+//let currentPlan; //
 function init(){
 
   loadTitles();
@@ -39,7 +39,7 @@ function fillTitles(titlesArray){
     let opt = document.createElement("option");
     opt.textContent = title.planName;
     el.appendChild(opt);
-    currentPlan = title.planName;
+    //currentPlan = title.planName;
   }
 }
 
